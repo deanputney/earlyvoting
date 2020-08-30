@@ -5,10 +5,10 @@ const StateRow = (data) => {
   data = data.data
 
   var startDate = new Date(data.earlyVotingStartDate)
-  data.shortStartDate = (startDate.getMonth() + 1) + '/' + startDate.getDate()
+  data.shortStartDate = (startDate.getMonth() + 1) + '/' + (startDate.getDate() + 1)
 
   if (data.daysToVote < 1) {
-   return null
+    return null
   }
 
   // The first colspan is how far from left to offset the start of the bar.
