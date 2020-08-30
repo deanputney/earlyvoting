@@ -1,17 +1,37 @@
 import React from 'react';
-import {
-  FaSass,
-  FaHtml5,
-  FaReact,
-  FaMobileAlt,
-  FaRocket,
-  FaOsi
-} from 'react-icons/fa';
-
+import { StaticQuery, graphql } from 'gatsby'
 import './style.scss';
-import Emoji from './emoji';
+
+function tableRowForState(stateData) {
+  // The first colspan is how far from left to offset the start of the bar.
+  // This corresponds to how many days from TODAY is the beginning of the voting
+  // period.
+  // The second colspan is how long the voting period is.
+  return (
+    <tr>
+      <th>{stateData.state}</th>
+      <td colspan={stateData.daysToStart}></td>
+      <td colspan={stateData.daysToVote} class="bar">{stateData.earlyVotingStartDate}</td>
+    </tr>
+  )
+}
 
 const StateGantt = () => (
+  <StaticQuery
+  query={graphql`
+    {
+      allGoogleSheetSiteDatesRow {
+        nodes {
+          state
+          daysToStart
+          daysToVote
+          earlyVotingStartDate
+          earlyVotingEndDate
+        }
+      }
+    }
+  `}
+  render={data => (
   <div>
     <section className="section">
       <div className="container">
@@ -27,70 +47,9 @@ const StateGantt = () => (
               <tr>
                 <td class="bars" colspan="46">
                   <table class="table is-fullwidth">
-                    <tr>
-                      <th>Minnesota</th>
-                      <td colspan="45" class="bar">9/18</td>
-                    </tr>
-                    <tr>
-                      <th>Michigan</th>
-                      <td></td>
-                      <td colspan="2" class="gantt-bar"></td>
-                    </tr>
-                    <tr>
-                      <th>South Dakota</th>
-                      <td colspan="1"></td>
-                      <td colspan="2" class="bar"></td>
-                    </tr>
-                    <tr>
-                      <th>Vermont</th>
-                      <td></td>
-                      <td colspan="2" class="bar"></td>
-                    </tr>
-                    <tr>
-                      <th>Virginia</th>
-                      <td></td>
-                      <td colspan="2" class="bar"></td>
-                    </tr>
-                    <tr>
-                      <th>Missouri</th>
-                      <td></td>
-                      <td colspan="2" class="bar"></td>
-                    </tr>
-                    <tr>
-                      <th>Illinois</th>
-                      <td></td>
-                      <td colspan="2" class="bar"></td>
-                    </tr>
-                    <tr>
-                      <th>Wyoming</th>
-                      <td></td>
-                      <td colspan="2" class="bar"></td>
-                    </tr>
-                    <tr>
-                      <th>Maine</th>
-                      <td></td>
-                      <td colspan="2" class="bar"></td>
-                    </tr>
-                    <tr>
-                      <th>Nebraska</th>
-                      <td></td>
-                      <td colspan="2" class="bar"></td>
-                    </tr>
-                    <tr>
-                      <th>Iowa</th>
-                      <td></td>
-                      <td colspan="2" class="bar"></td>
-                    </tr>
-                    <tr>
-                      <th>Ohio</th>
-                      <td></td>
-                      <td colspan="2" class="bar"></td>
-                    </tr>
-                    <tr>
-                      <th>Indiana</th>
-                      <td></td>
-                      <td colspan="2" class="bar"></td>
-                    </tr>
+                    {
+                      data.allGoogleSheetSiteDatesRow.nodes.map(tableRowForState)
+                    } 
                   </table>
                 </td>
               </tr>
@@ -100,6 +59,8 @@ const StateGantt = () => (
       </div>
     </section>
   </div>
+  )}
+  />
 );
 
 export default StateGantt;
