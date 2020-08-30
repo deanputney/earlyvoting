@@ -1,13 +1,10 @@
+const { slugifyState } = require('./src/lib/common');
 const path = require(`path`)
-
-const slugify = (stateName) => {
-    return stateName.toLowerCase().replace(' ', '-')
-}
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
     const { createNodeField } = actions;
     if (node.internal.type === `googleSheetSiteDatesRow`) {
-        var slug = slugify(node.state);
+        var slug = slugifyState(node.state);
         createNodeField({
             node,
             name: `slug`,
