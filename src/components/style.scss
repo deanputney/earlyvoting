@@ -41,6 +41,10 @@
   		* {
   			border: none;
   		}
+  		.bar-spacer {
+  			text-align: right;
+  			font-weight: bold;
+  		}
   		.bar {
   		  background-color: $primary-color;
   		  border-radius: 10px;
