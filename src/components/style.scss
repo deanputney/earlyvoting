@@ -15,6 +15,7 @@
 		padding-left: 5px;
 		padding-right: 5px;
 		color: $primary-color;
+		white-space: nowrap;
 	}
 }
 
@@ -39,7 +40,7 @@
   th {
     width: 150px;
     @include mobile {
-    	width: 70px;
+    	width: 85px;
     	font-size: 0.9em;
     	padding-left: 0;
     }
@@ -55,6 +56,9 @@
   		table-layout: fixed;
   		* {
   			border: none;
+  		}
+  		th {
+  			white-space: nowrap;
   		}
   		.bar-spacer {
   			text-align: right;

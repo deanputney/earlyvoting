@@ -16,8 +16,7 @@ const TimeQuipRow = (data) => {
         <td colspan={data.daysToVote} class="quip">{quip}</td>
       </tr>
       <tr class="is-hidden-desktop">
-        <th></th>
-        <td colspan="46" class="quip" align="right">{quip}</td>
+        <td colspan="47" class="quip" align="right">{quip}</td>
       </tr>
     </React.Fragment>
   )
