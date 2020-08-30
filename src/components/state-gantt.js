@@ -17,7 +17,9 @@ let usedQuips = []
 
 function layoutStateRows(stateData) {
   const startDate = new Date(stateData.earlyVotingStartDate)
+  const chartStartDate = new Date('2020-09-17')
   const days = Math.abs(electionDate - startDate) / 1000 / 60 / 60 / 24
+  stateData.daysToStart = Math.abs(chartStartDate - startDate) / 1000 / 60 / 60 / 24
 
   if (quips[days] != null && !usedQuips.includes(days)) {
     usedQuips.push(days)
@@ -44,7 +46,6 @@ const StateGantt = () => (
       allGoogleSheetSiteDatesRow {
         nodes {
           state
-          daysToStart
           daysToVote
           earlyVotingStartDate
           earlyVotingEndDate
