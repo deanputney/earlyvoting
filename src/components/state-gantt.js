@@ -40,9 +40,7 @@ const StateGantt = () => (
             <table class="gantt table is-fullwidth">
               <thead>
                 <th></th>
-                <td colspan="3">9/19</td>
-                <td colspan="35"></td>
-                <td colspan="7" align="right">Election Day</td>
+                <td colspan="45" align="right">Election Day</td>
               </thead>
               <tr>
                 <td class="bars" colspan="46">
@@ -50,6 +48,19 @@ const StateGantt = () => (
                     {
                       data.allGoogleSheetSiteDatesRow.nodes.map(tableRowForState)
                     } 
+                    <tr>
+                      <th></th>
+                      <td colspan="4"></td>
+                      <td colspan="41">
+                        You could probably read all the Harry Potters if you saved this much time.
+                      </td>
+                    </tr>
+                    <tr>
+                      <th></th>
+                      <td colspan="16"></td>
+                      <td colspan="25">Voting now would save you a whole month.</td>
+                    </tr>
+
                   </table>
                 </td>
               </tr>
