@@ -1,17 +1,23 @@
 import React from 'react';
 import { StaticQuery, graphql } from 'gatsby'
 import './style.scss';
+import {todaysDate, parseDate, dateDiffInDays} from '../lib/dates';
 
 function tableRowForState(stateData) {
   // The first colspan is how far from left to offset the start of the bar.
   // This corresponds to how many days from TODAY is the beginning of the voting
   // period.
   // The second colspan is how long the voting period is.
+  var today = todaysDate();
+  var earlyVotingStart = parseDate(stateData.earlyVotingStartDate);
+  var earlyVotingEnd = parseDate(stateData.earlyVotingEndDate);
+  var diff = dateDiffInDays(today, earlyVotingStart);
+  var daysToVote = dateDiffInDays(earlyVotingStart, earlyVotingEnd);
   return (
     <tr>
       <th>{stateData.state}</th>
-      <td colspan={stateData.daysToStart}></td>
-      <td colspan={stateData.daysToVote} class="bar">{stateData.earlyVotingStartDate}</td>
+      <td colspan={diff}></td>
+      <td colspan={daysToVote} class="bar">{stateData.earlyVotingStartDate}</td>
     </tr>
   )
 }
