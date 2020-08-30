@@ -24,6 +24,13 @@
 	align-items: center;
 }
 
+.gantt-column {
+	@include mobile {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
 .gantt {
   table-layout: fixed;
   tr {
@@ -31,18 +38,27 @@
   }
   th {
     width: 150px;
+    @include mobile {
+    	width: 70px;
+    	font-size: 0.9em;
+    	padding-left: 0;
+    }
   }
   .bars {
   	padding: 0px;
   	table {
   		border-spacing: 5px;
   		border-collapse: separate;
+  		@include mobile {
+  			border-spacing: 4px;
+  		}
   		table-layout: fixed;
   		* {
   			border: none;
   		}
   		.bar-spacer {
   			text-align: right;
+  			vertical-align: middle;
   			font-weight: bold;
   		}
   		.bar {
@@ -50,6 +66,7 @@
   		  border-radius: 10px;
   		  color: $white;
   		  font-weight: bold;
+  		  vertical-align: middle;
   		}
   	}
 	}

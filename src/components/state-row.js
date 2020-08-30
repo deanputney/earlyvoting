@@ -25,11 +25,27 @@ const StateRow = (data) => {
     )
   }
 
+  const minMobileDays = 12
+
   return (
     <tr>
       <th>{data.state}</th>
-      <td colspan={data.daysToStart} class="bar-spacer"></td>
-      <td colspan={data.daysToVote} class="bar">{data.shortStartDate}</td>
+      <td colspan={data.daysToStart} class="bar-spacer">
+        <span class={(
+          () => {
+            if (data.daysToVote < minMobileDays) { return 'date is-hidden-tablet' }
+            return 'date is-hidden'
+          }
+        )()} >{data.shortStartDate}</span>
+      </td>
+      <td colspan={data.daysToVote} class="bar">
+        <span class={(
+          () => {
+            if (data.daysToVote < minMobileDays) { return 'date is-hidden-mobile' }
+            return 'date'
+          }
+        )()}>{data.shortStartDate}</span>
+      </td>
     </tr>
   )
 };
