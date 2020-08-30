@@ -20,9 +20,7 @@ const StateGantt = () => (
             <table class="gantt table is-fullwidth">
               <thead>
                 <th></th>
-                <td colspan="3">9/18</td>
-                <td colspan="35"></td>
-                <td colspan="7" align="right">Election Day</td>
+                <td colspan="45" align="right">Election Day</td>
               </thead>
               <tr>
                 <td class="bars" colspan="46">

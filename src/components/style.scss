@@ -9,6 +9,15 @@
 	background: linear-gradient(to right, $primary-color, $secondary-color);
 }
 
+.hero {
+	.hilight {
+		background-color: $white;
+		padding-left: 5px;
+		padding-right: 5px;
+		color: $primary-color;
+	}
+}
+
 .center {
 	display: flex;
 	justify-content: center;
@@ -33,9 +42,9 @@
   			border: none;
   		}
   		.bar {
-  		  background-color: #ff00ff;
+  		  background-color: $primary-color;
   		  border-radius: 10px;
-  		  color: #ffffff;
+  		  color: $white;
   		  font-weight: bold;
   		}
   	}
