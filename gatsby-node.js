@@ -7,7 +7,7 @@ const slugify = (stateName) => {
 exports.onCreateNode = ({ node, getNode, actions }) => {
     const { createNodeField } = actions;
     if (node.internal.type === `googleSheetSiteDatesRow`) {
-        var slug = 'src/pages/' + slugify(node.state);
+        var slug = slugify(node.state);
         createNodeField({
             node,
             name: `slug`,
@@ -37,8 +37,6 @@ exports.createPages = async ({ graphql, actions }) => {
             path: node.fields.slug,
             component: path.resolve(`./src/templates/state-page.js`),
             context: {
-                // Data passed to context is available
-                // in page queries as GraphQL variables.
                 slug: node.fields.slug,
             },
         })
