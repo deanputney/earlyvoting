@@ -7,11 +7,15 @@ function tableRowForState(stateData) {
   // This corresponds to how many days from TODAY is the beginning of the voting
   // period.
   // The second colspan is how long the voting period is.
+
+  var startDate = new Date(stateData.earlyVotingStartDate)
+  stateData.shortStartDate = (startDate.getMonth() + 1) + '/' + startDate.getDate()
+
   return (
     <tr>
       <th>{stateData.state}</th>
       <td colspan={stateData.daysToStart}></td>
-      <td colspan={stateData.daysToVote} class="bar">{stateData.earlyVotingStartDate}</td>
+      <td colspan={stateData.daysToVote} class="bar">{stateData.shortStartDate}</td>
     </tr>
   )
 }
@@ -40,14 +44,14 @@ const StateGantt = () => (
             <table class="gantt table is-fullwidth">
               <thead>
                 <th></th>
-                <td colspan="45" align="right">Election Day</td>
+                <td colspan="45" align="right">Election Day is November 3rd</td>
               </thead>
               <tr>
                 <td class="bars" colspan="46">
                   <table class="table is-fullwidth">
                     {
                       data.allGoogleSheetSiteDatesRow.nodes.map(tableRowForState)
-                    } 
+                    }
                     <tr>
                       <th></th>
                       <td colspan="4"></td>
