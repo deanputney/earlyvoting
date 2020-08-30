@@ -68,19 +68,6 @@ const StateGantt = () => (
                     {
                       data.allGoogleSheetSiteDatesRow.nodes.map(layoutStateRows)
                     }
-                    <tr>
-                      <th></th>
-                      <td colspan="4"></td>
-                      <td colspan="41">
-                        You could probably read all the Harry Potters if you saved this much time.
-                      </td>
-                    </tr>
-                    <tr>
-                      <th></th>
-                      <td colspan="16"></td>
-                      <td colspan="25">Voting now would save you a whole month.</td>
-                    </tr>
-
                   </table>
                 </td>
               </tr>
