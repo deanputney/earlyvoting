@@ -1,26 +1,38 @@
 import React from 'react';
 import { StaticQuery, graphql } from 'gatsby'
+import StateRow from './state-row';
+import TimeQuipRow from './time-quip-row';
 import './style.scss';
 
-function tableRowForState(stateData) {
-  // The first colspan is how far from left to offset the start of the bar.
-  // This corresponds to how many days from TODAY is the beginning of the voting
-  // period.
-  // The second colspan is how long the voting period is.
+const electionDate = new Date('2020-11-03')
+let quips = {
+  42: 'You could probably read all the Harry Potters if you saved this much time.',
+  30: 'Voting now would save you a whole month.',
+  20: 'This is three whole weekends off.',
+  14: 'Two weeks of bliss.',
+  10: 'Still worth it!'
+}
+let usedQuips = []
 
-  var startDate = new Date(stateData.earlyVotingStartDate)
-  stateData.shortStartDate = (startDate.getMonth() + 1) + '/' + startDate.getDate()
+function layoutStateRows(stateData) {
+  const startDate = new Date(stateData.earlyVotingStartDate)
+  const days = Math.abs(electionDate - startDate) / 1000 / 60 / 60 / 24
 
-  if (stateData.daysToVote < 1) {
-    return
+  if (quips[days] != null && !usedQuips.includes(days)) {
+    usedQuips.push(days)
+
+    return (
+      <React.Fragment>
+        <TimeQuipRow quip={quips[days]} data={stateData} />
+        <StateRow data={stateData} />
+      </React.Fragment>
+    )
   }
 
   return (
-    <tr>
-      <th>{stateData.state}</th>
-      <td colspan={stateData.daysToStart}></td>
-      <td colspan={stateData.daysToVote} class="bar">{stateData.shortStartDate}</td>
-    </tr>
+    <React.Fragment>
+      <StateRow data={stateData} />
+    </React.Fragment>
   )
 }
 
@@ -54,7 +66,7 @@ const StateGantt = () => (
                 <td class="bars" colspan="46">
                   <table class="table is-fullwidth">
                     {
-                      data.allGoogleSheetSiteDatesRow.nodes.map(tableRowForState)
+                      data.allGoogleSheetSiteDatesRow.nodes.map(layoutStateRows)
                     }
                     <tr>
                       <th></th>
