@@ -11,6 +11,10 @@ function tableRowForState(stateData) {
   var startDate = new Date(stateData.earlyVotingStartDate)
   stateData.shortStartDate = (startDate.getMonth() + 1) + '/' + startDate.getDate()
 
+  if (stateData.daysToVote < 1) {
+    return
+  }
+
   return (
     <tr>
       <th>{stateData.state}</th>
