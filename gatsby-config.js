@@ -1,4 +1,5 @@
 module.exports = {
+	pathPrefix: "/earlyvoting",
 	siteMetadata: {
 		title: 'Vote Early!',
 		author: 'jared kofron & dean putney',
