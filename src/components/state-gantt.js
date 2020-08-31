@@ -5,7 +5,7 @@ import TimeQuipRow from './time-quip-row';
 import './style.scss';
 import {todaysDate, parseDate, dateDiffInDays} from '../lib/dates';
 
-const electionDate = new Date('2020-11-03')
+const electionDate = parseDate('2020-11-03')
 let quips = {
   42: 'You could probably read all the Harry Potters if you saved this much time.',
   30: 'Voting now would save you a whole month.',
@@ -16,10 +16,10 @@ let quips = {
 let usedQuips = []
 
 function layoutStateRows(stateData) {
-  const startDate = new Date(stateData.earlyVotingStartDate)
-  const chartStartDate = new Date('2020-09-17')
-  const days = Math.abs(electionDate - startDate) / 1000 / 60 / 60 / 24
-  stateData.daysToStart = Math.abs(chartStartDate - startDate) / 1000 / 60 / 60 / 24
+  const startDate = parseDate(stateData.earlyVotingStartDate)
+  const chartStartDate = parseDate('2020-09-17')
+  const days = dateDiffInDays(startDate, electionDate)
+  stateData.daysToStart = dateDiffInDays(chartStartDate, startDate) 
 
   if (quips[days] != null && !usedQuips.includes(days)) {
     usedQuips.push(days)

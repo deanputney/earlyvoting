@@ -2,15 +2,19 @@ import React from 'react';
 import { Link } from 'gatsby';
 import './style.scss';
 import { statePageUri } from '../lib/common';
+import { dateDiffInDays, parseDate } from '../lib/dates';
 
 const StateRow = (data) => {
   data = data.data
   var statePage = statePageUri(data.state);
 
-  var startDate = new Date(data.earlyVotingStartDate)
-  data.shortStartDate = (startDate.getMonth() + 1) + '/' + (startDate.getDate() + 1)
+  var endDate = parseDate(data.earlyVotingEndDate)
+  var startDate = parseDate(data.earlyVotingStartDate)
+  data.shortStartDate = (startDate.month() + 1) + '/' + (startDate.date() + 1)
 
-  if (data.daysToVote < 1) {
+  const daysToVote = dateDiffInDays(startDate, endDate)
+
+  if ((daysToVote < 1) || (endDate === null)) {
     return null
   }
 
@@ -23,7 +27,13 @@ const StateRow = (data) => {
       <tr>
         <th><Link to={statePage}>{data.state}</Link></th>
         <td colspan={data.daysToStart} class="bar-spacer">{data.shortStartDate}</td>
-        <td colspan={data.daysToVote} class="bar"></td>
+        <td colspan={daysToVote} class="bar">
+          <Link to={statePage}>
+            <div class="bar-content">
+              {data.shortStartDate}
+            </div>
+          </Link>
+        </td>
       </tr>
     )
   }
@@ -32,7 +42,13 @@ const StateRow = (data) => {
     <tr>
       <th><Link to={statePage}>{data.state}</Link></th>
       <td colspan={data.daysToStart} class="bar-spacer"></td>
-      <td colspan={data.daysToVote} class="bar">{data.shortStartDate}</td>
+      <td colspan={daysToVote} class="bar">
+        <Link to={statePage}>
+          <div class="bar-content">
+            {data.shortStartDate}
+          </div>
+        </Link>
+      </td>
     </tr>
   )
 };
