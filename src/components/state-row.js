@@ -1,13 +1,20 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import './style.scss';
+import { statePageUri } from '../lib/common';
+import { dateDiffInDays, parseDate } from '../lib/dates';
 
 const StateRow = (data) => {
   data = data.data
+  var statePage = statePageUri(data.state);
 
-  var startDate = new Date(data.earlyVotingStartDate)
-  data.shortStartDate = (startDate.getMonth() + 1) + '/' + (startDate.getDate() + 1)
+  var endDate = parseDate(data.earlyVotingEndDate)
+  var startDate = parseDate(data.earlyVotingStartDate)
+  data.shortStartDate = (startDate.month() + 1) + '/' + (startDate.date() + 1)
 
-  if (data.daysToVote < 1) {
+  const daysToVote = dateDiffInDays(startDate, endDate)
+
+  if ((daysToVote < 1) || (endDate === null)) {
     return null
   }
 
@@ -18,9 +25,15 @@ const StateRow = (data) => {
   if (data.daysToVote < 3) {
     return (
       <tr>
-        <th>{data.state}</th>
+        <th><Link to={statePage}>{data.state}</Link></th>
         <td colspan={data.daysToStart} class="bar-spacer">{data.shortStartDate}</td>
-        <td colspan={data.daysToVote} class="bar"></td>
+        <td colspan={daysToVote} class="bar">
+          <Link to={statePage}>
+            <div class="bar-content">
+              {data.shortStartDate}
+            </div>
+          </Link>
+        </td>
       </tr>
     )
   }
@@ -29,7 +42,7 @@ const StateRow = (data) => {
 
   return (
     <tr>
-      <th>{data.state}</th>
+      <th><Link to={statePage}>{data.state}</Link></th>
       <td colspan={data.daysToStart} class="bar-spacer">
         <span class={(
           () => {
@@ -38,13 +51,17 @@ const StateRow = (data) => {
           }
         )()} >{data.shortStartDate}</span>
       </td>
-      <td colspan={data.daysToVote} class="bar">
-        <span class={(
-          () => {
-            if (data.daysToVote < minMobileDays) { return 'date is-hidden-mobile' }
-            return 'date'
-          }
-        )()}>{data.shortStartDate}</span>
+      <td colspan={daysToVote} class="bar">
+        <Link to={statePage}>
+          <div class="bar-content">
+            <span class={(
+              () => {
+                if (data.daysToVote < minMobileDays) { return 'date is-hidden-mobile' }
+                return 'date'
+              }
+            )()}>{data.shortStartDate}</span>
+          </div>
+        </Link>
       </td>
     </tr>
   )
