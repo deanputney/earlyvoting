@@ -58,7 +58,7 @@ const StateGantt = () => (
     <section className="section">
       <div className="container">
         <div class="columns">
-          <div class="column is-10-desktop is-offset-1-desktop">
+          <div class="column gantt-column is-10-desktop is-offset-1-desktop is-fullwidth-mobile">
             <table class="gantt table is-fullwidth">
               <thead>
                 <th></th>
