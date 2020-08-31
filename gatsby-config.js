@@ -2,7 +2,7 @@ module.exports = {
 	siteMetadata: {
 		title: 'Vote Early!',
 		author: 'jared kofron & dean putney',
-		imageUrl: 'https://i.imgur.com/Vz81GEl.png',
+		imageUrl: 'src/images/share.png',
 		description: 'Get informed about early voting in your state.',
 		keywords: `Web developer, Web, Developer, CSS, HTML, JS, Javascript, Gatsby, Bulma Developer, CSS3, HTML5, Seo, Starter`,
 		// twitter: 'https://twitter.com/amanhimself',
