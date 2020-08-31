@@ -22,11 +22,7 @@ const Footer = () => (
             By Jared Kofron and Dean Putney
           </p>
           <article className='media center'>
-            <span className='icon'>
-              <a href={data.site.siteMetadata.voteAmerica}>
-              <img src={voteAmericaLogo} alt="vote-america-logo"/>
-              </a>
-            </span>
+            <a href={data.site.siteMetadata.voteAmerica}>Data provided by VoteAmerica</a>
             &nbsp;
           </article>
           &nbsp;
