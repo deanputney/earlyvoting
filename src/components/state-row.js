@@ -29,9 +29,7 @@ const StateRow = (data) => {
         <td colspan={data.daysToStart} class="bar-spacer">{data.shortStartDate}</td>
         <td colspan={daysToVote} class="bar">
           <Link to={statePage}>
-            <div class="bar-content">
-              {data.shortStartDate}
-            </div>
+            <div class="bar-content"></div>
           </Link>
         </td>
       </tr>
