@@ -1,1 +1,1 @@
-{"componentChunkName":"component---src-templates-state-page-js","path":"/minnesota","result":{"data":{"googleSheetSiteDatesRow":{"state":"Minnesota","earlyVotingStartDate":"2020-09-18","earlyVotingEndDate":"2020-11-02"}},"pageContext":{"slug":"minnesota"}}}
+{"componentChunkName":"component---src-templates-state-page-js","path":"/minnesota","result":{"data":{"googleSheetVaApiDataRow":{"state":"MN"}},"pageContext":{"slug":"minnesota"}}}

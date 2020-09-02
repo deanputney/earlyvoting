@@ -1,1 +1,1 @@
-{"componentChunkName":"component---src-templates-state-page-js","path":"/alabama","result":{"data":{"googleSheetSiteDatesRow":{"state":"Alabama","earlyVotingStartDate":null,"earlyVotingEndDate":null}},"pageContext":{"slug":"alabama"}}}
+{"componentChunkName":"component---src-templates-state-page-js","path":"/alabama","result":{"data":{"googleSheetVaApiDataRow":{"state":"AL"}},"pageContext":{"slug":"alabama"}}}

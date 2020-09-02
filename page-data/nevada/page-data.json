@@ -1,1 +1,1 @@
-{"componentChunkName":"component---src-templates-state-page-js","path":"/nevada","result":{"data":{"googleSheetSiteDatesRow":{"state":"Nevada","earlyVotingStartDate":"2020-10-17","earlyVotingEndDate":"2020-10-30"}},"pageContext":{"slug":"nevada"}}}
+{"componentChunkName":"component---src-templates-state-page-js","path":"/nevada","result":{"data":{"googleSheetVaApiDataRow":{"state":"NV"}},"pageContext":{"slug":"nevada"}}}

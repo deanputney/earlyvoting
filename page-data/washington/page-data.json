@@ -1,1 +1,1 @@
-{"componentChunkName":"component---src-templates-state-page-js","path":"/washington","result":{"data":{"googleSheetSiteDatesRow":{"state":"Washington","earlyVotingStartDate":"2020-10-16","earlyVotingEndDate":"2020-11-02"}},"pageContext":{"slug":"washington"}}}
+{"componentChunkName":"component---src-templates-state-page-js","path":"/washington","result":{"data":{"googleSheetVaApiDataRow":{"state":"WA"}},"pageContext":{"slug":"washington"}}}

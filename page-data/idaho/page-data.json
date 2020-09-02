@@ -1,1 +1,1 @@
-{"componentChunkName":"component---src-templates-state-page-js","path":"/idaho","result":{"data":{"googleSheetSiteDatesRow":{"state":"Idaho","earlyVotingStartDate":"2020-10-19","earlyVotingEndDate":"2020-10-30"}},"pageContext":{"slug":"idaho"}}}
+{"componentChunkName":"component---src-templates-state-page-js","path":"/idaho","result":{"data":{"googleSheetVaApiDataRow":{"state":"ID"}},"pageContext":{"slug":"idaho"}}}

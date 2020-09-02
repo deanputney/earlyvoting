@@ -1,1 +1,1 @@
-{"componentChunkName":"component---src-templates-state-page-js","path":"/north-carolina","result":{"data":{"googleSheetSiteDatesRow":{"state":"North Carolina","earlyVotingStartDate":"2020-10-15","earlyVotingEndDate":"2020-10-31"}},"pageContext":{"slug":"north-carolina"}}}
+{"componentChunkName":"component---src-templates-state-page-js","path":"/north-carolina","result":{"data":{"googleSheetVaApiDataRow":{"state":"NC"}},"pageContext":{"slug":"north-carolina"}}}

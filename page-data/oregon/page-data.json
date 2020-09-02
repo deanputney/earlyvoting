@@ -1,1 +1,1 @@
-{"componentChunkName":"component---src-templates-state-page-js","path":"/oregon","result":{"data":{"googleSheetSiteDatesRow":{"state":"Oregon","earlyVotingStartDate":null,"earlyVotingEndDate":null}},"pageContext":{"slug":"oregon"}}}
+{"componentChunkName":"component---src-templates-state-page-js","path":"/oregon","result":{"data":{"googleSheetVaApiDataRow":{"state":"OR"}},"pageContext":{"slug":"oregon"}}}

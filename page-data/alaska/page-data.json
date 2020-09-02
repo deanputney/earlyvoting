@@ -1,1 +1,1 @@
-{"componentChunkName":"component---src-templates-state-page-js","path":"/alaska","result":{"data":{"googleSheetSiteDatesRow":{"state":"Alaska","earlyVotingStartDate":"2020-10-19","earlyVotingEndDate":"2020-11-02"}},"pageContext":{"slug":"alaska"}}}
+{"componentChunkName":"component---src-templates-state-page-js","path":"/alaska","result":{"data":{"googleSheetVaApiDataRow":{"state":"AK"}},"pageContext":{"slug":"alaska"}}}

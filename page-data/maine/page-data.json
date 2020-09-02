@@ -1,1 +1,1 @@
-{"componentChunkName":"component---src-templates-state-page-js","path":"/maine","result":{"data":{"googleSheetSiteDatesRow":{"state":"Maine","earlyVotingStartDate":"2020-10-04","earlyVotingEndDate":"2020-10-29"}},"pageContext":{"slug":"maine"}}}
+{"componentChunkName":"component---src-templates-state-page-js","path":"/maine","result":{"data":{"googleSheetVaApiDataRow":{"state":"ME"}},"pageContext":{"slug":"maine"}}}

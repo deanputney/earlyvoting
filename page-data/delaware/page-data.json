@@ -1,1 +1,1 @@
-{"componentChunkName":"component---src-templates-state-page-js","path":"/delaware","result":{"data":{"googleSheetSiteDatesRow":{"state":"Delaware","earlyVotingStartDate":null,"earlyVotingEndDate":null}},"pageContext":{"slug":"delaware"}}}
+{"componentChunkName":"component---src-templates-state-page-js","path":"/delaware","result":{"data":{"googleSheetVaApiDataRow":{"state":"DE"}},"pageContext":{"slug":"delaware"}}}

@@ -1,1 +1,1 @@
-{"componentChunkName":"component---src-templates-state-page-js","path":"/wyoming","result":{"data":{"googleSheetSiteDatesRow":{"state":"Wyoming","earlyVotingStartDate":"2020-09-24","earlyVotingEndDate":"2020-11-02"}},"pageContext":{"slug":"wyoming"}}}
+{"componentChunkName":"component---src-templates-state-page-js","path":"/wyoming","result":{"data":{"googleSheetVaApiDataRow":{"state":"WY"}},"pageContext":{"slug":"wyoming"}}}

@@ -1,1 +1,1 @@
-{"componentChunkName":"component---src-templates-state-page-js","path":"/georgia","result":{"data":{"googleSheetSiteDatesRow":{"state":"Georgia","earlyVotingStartDate":"2020-10-12","earlyVotingEndDate":"2020-10-30"}},"pageContext":{"slug":"georgia"}}}
+{"componentChunkName":"component---src-templates-state-page-js","path":"/georgia","result":{"data":{"googleSheetVaApiDataRow":{"state":"GA"}},"pageContext":{"slug":"georgia"}}}

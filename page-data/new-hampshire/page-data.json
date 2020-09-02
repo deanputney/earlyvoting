@@ -1,1 +1,1 @@
-{"componentChunkName":"component---src-templates-state-page-js","path":"/new-hampshire","result":{"data":{"googleSheetSiteDatesRow":{"state":"New Hampshire","earlyVotingStartDate":null,"earlyVotingEndDate":null}},"pageContext":{"slug":"new-hampshire"}}}
+{"componentChunkName":"component---src-templates-state-page-js","path":"/new-hampshire","result":{"data":{"googleSheetVaApiDataRow":{"state":"NH"}},"pageContext":{"slug":"new-hampshire"}}}

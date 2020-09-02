@@ -1,1 +1,1 @@
-{"componentChunkName":"component---src-templates-state-page-js","path":"/kentucky","result":{"data":{"googleSheetSiteDatesRow":{"state":"Kentucky","earlyVotingStartDate":null,"earlyVotingEndDate":null}},"pageContext":{"slug":"kentucky"}}}
+{"componentChunkName":"component---src-templates-state-page-js","path":"/kentucky","result":{"data":{"googleSheetVaApiDataRow":{"state":"KY"}},"pageContext":{"slug":"kentucky"}}}

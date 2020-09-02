@@ -1,1 +1,1 @@
-{"componentChunkName":"component---src-templates-state-page-js","path":"/mississippi","result":{"data":{"googleSheetSiteDatesRow":{"state":"Mississippi","earlyVotingStartDate":null,"earlyVotingEndDate":null}},"pageContext":{"slug":"mississippi"}}}
+{"componentChunkName":"component---src-templates-state-page-js","path":"/mississippi","result":{"data":{"googleSheetVaApiDataRow":{"state":"MS"}},"pageContext":{"slug":"mississippi"}}}

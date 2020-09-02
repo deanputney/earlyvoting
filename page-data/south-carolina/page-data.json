@@ -1,1 +1,1 @@
-{"componentChunkName":"component---src-templates-state-page-js","path":"/south-carolina","result":{"data":{"googleSheetSiteDatesRow":{"state":"South Carolina","earlyVotingStartDate":null,"earlyVotingEndDate":null}},"pageContext":{"slug":"south-carolina"}}}
+{"componentChunkName":"component---src-templates-state-page-js","path":"/south-carolina","result":{"data":{"googleSheetVaApiDataRow":{"state":"SC"}},"pageContext":{"slug":"south-carolina"}}}

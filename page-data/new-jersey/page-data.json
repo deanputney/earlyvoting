@@ -1,1 +1,1 @@
-{"componentChunkName":"component---src-templates-state-page-js","path":"/new-jersey","result":{"data":{"googleSheetSiteDatesRow":{"state":"New Jersey","earlyVotingStartDate":null,"earlyVotingEndDate":null}},"pageContext":{"slug":"new-jersey"}}}
+{"componentChunkName":"component---src-templates-state-page-js","path":"/new-jersey","result":{"data":{"googleSheetVaApiDataRow":{"state":"NJ"}},"pageContext":{"slug":"new-jersey"}}}

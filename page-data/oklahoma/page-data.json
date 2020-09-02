@@ -1,1 +1,1 @@
-{"componentChunkName":"component---src-templates-state-page-js","path":"/oklahoma","result":{"data":{"googleSheetSiteDatesRow":{"state":"Oklahoma","earlyVotingStartDate":"2020-10-29","earlyVotingEndDate":"2020-10-31"}},"pageContext":{"slug":"oklahoma"}}}
+{"componentChunkName":"component---src-templates-state-page-js","path":"/oklahoma","result":{"data":{"googleSheetVaApiDataRow":{"state":"OK"}},"pageContext":{"slug":"oklahoma"}}}

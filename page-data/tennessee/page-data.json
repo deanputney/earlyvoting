@@ -1,1 +1,1 @@
-{"componentChunkName":"component---src-templates-state-page-js","path":"/tennessee","result":{"data":{"googleSheetSiteDatesRow":{"state":"Tennessee","earlyVotingStartDate":"2020-10-14","earlyVotingEndDate":"2020-10-29"}},"pageContext":{"slug":"tennessee"}}}
+{"componentChunkName":"component---src-templates-state-page-js","path":"/tennessee","result":{"data":{"googleSheetVaApiDataRow":{"state":"TN"}},"pageContext":{"slug":"tennessee"}}}

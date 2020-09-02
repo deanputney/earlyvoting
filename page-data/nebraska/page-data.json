@@ -1,1 +1,1 @@
-{"componentChunkName":"component---src-templates-state-page-js","path":"/nebraska","result":{"data":{"googleSheetSiteDatesRow":{"state":"Nebraska","earlyVotingStartDate":"2020-10-04","earlyVotingEndDate":"2020-11-02"}},"pageContext":{"slug":"nebraska"}}}
+{"componentChunkName":"component---src-templates-state-page-js","path":"/nebraska","result":{"data":{"googleSheetVaApiDataRow":{"state":"NE"}},"pageContext":{"slug":"nebraska"}}}
