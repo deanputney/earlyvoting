@@ -19,7 +19,7 @@ function layoutStateRows(stateData) {
   const startDate = parseDate(stateData.earlyVotingStartDate)
   const chartStartDate = parseDate('2020-09-17')
   const days = dateDiffInDays(startDate, electionDate)
-  stateData.daysToStart = dateDiffInDays(chartStartDate, startDate) 
+  stateData.daysToStart = dateDiffInDays(chartStartDate, startDate)
 
   if (quips[days] != null && !usedQuips.includes(days)) {
     usedQuips.push(days)
@@ -66,7 +66,7 @@ const StateGantt = () => (
               </thead>
               <tr>
                 <td class="bars" colspan="46">
-                  <table class="table is-fullwidth">
+                  <table class="is-fullwidth is-fullwidth-mobile">
                     {
                       data.allGoogleSheetSiteDatesRow.nodes.map(layoutStateRows)
                     }

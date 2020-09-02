@@ -14,7 +14,7 @@ const StateRow = (data) => {
 
   const daysToVote = dateDiffInDays(startDate, endDate)
 
-  if ((daysToVote < 1) || (endDate === null)) {
+  if ((data.daysToVote < 1) || (endDate === null)) {
     return null
   }
 
