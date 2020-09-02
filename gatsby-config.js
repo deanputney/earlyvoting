@@ -12,7 +12,7 @@ module.exports = {
 		// gatsby: 'https://www.gatsbyjs.org/',
 		// bulma: 'https://bulma.io/',
 		voteAmerica: 'https://www.voteamerica.com/',
-		siteUrl: `https://www.earlyvoting.org`
+		siteUrl: 'https://www.deanputney.com'
 	},
 	plugins: [
 		{
