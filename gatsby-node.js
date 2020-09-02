@@ -11,13 +11,20 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
             value: slug,
         })
     }
+    else if (node.internal.type === `googleSheetVaApiDataRow`) {
+        createNodeField({
+            node,
+            name: `slug`,
+            value: node.stateSlug,
+        })
+    }
   }
 
 exports.createPages = async ({ graphql, actions }) => {
     const { createPage } = actions
     const result = await graphql(`
         query {
-            allGoogleSheetSiteDatesRow {
+            allGoogleSheetVaApiDataRow {
                 edges {
                     node {
                         fields {
@@ -29,7 +36,7 @@ exports.createPages = async ({ graphql, actions }) => {
         }
     `)
     
-    result.data.allGoogleSheetSiteDatesRow.edges.forEach(({ node }) => {
+    result.data.allGoogleSheetVaApiDataRow.edges.forEach(({ node }) => {
         createPage({
             path: node.fields.slug,
             component: path.resolve(`./src/templates/state-page.js`),

@@ -1,13 +1,14 @@
 import React from "react"
 import './style.scss';
+import { graphql } from 'gatsby'
 
 export default function StatePage({ data }) {
-    const stateData = data.googleSheetSiteDatesRow
+    const stateData = data.googleSheetVaApiDataRow
       return (
         <div>
             <section className="section">
                 <div className="container">
-                    early voting in {stateData.state} starts {stateData.earlyVotingStartDate} and ends {stateData.earlyVotingEndDate}
+                    early voting in {stateData.state} 
                 </div>
             </section>
         </div>
@@ -16,10 +17,8 @@ export default function StatePage({ data }) {
 
 export const query = graphql`
   query($slug: String!) {
-    googleSheetSiteDatesRow(fields: { slug: { eq: $slug } }) {
+    googleSheetVaApiDataRow(fields: { slug: { eq: $slug } }) {
       state
-      earlyVotingStartDate
-      earlyVotingEndDate
     }
   }
 `
