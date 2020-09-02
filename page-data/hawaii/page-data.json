@@ -1,1 +1,1 @@
-{"componentChunkName":"component---src-templates-state-page-js","path":"/hawaii","result":{"pageContext":{"slug":"hawaii"}}}
+{"componentChunkName":"component---src-templates-state-page-js","path":"/hawaii","result":{"data":{"googleSheetSiteDatesRow":{"state":"Hawaii","earlyVotingStartDate":"2020-10-24","earlyVotingEndDate":"2020-11-03"}},"pageContext":{"slug":"hawaii"}}}

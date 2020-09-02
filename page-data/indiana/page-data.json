@@ -1,1 +1,1 @@
-{"componentChunkName":"component---src-templates-state-page-js","path":"/indiana","result":{"pageContext":{"slug":"indiana"}}}
+{"componentChunkName":"component---src-templates-state-page-js","path":"/indiana","result":{"data":{"googleSheetSiteDatesRow":{"state":"Indiana","earlyVotingStartDate":"2020-10-06","earlyVotingEndDate":"2020-11-02"}},"pageContext":{"slug":"indiana"}}}

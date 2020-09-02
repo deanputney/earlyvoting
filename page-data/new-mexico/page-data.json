@@ -1,1 +1,1 @@
-{"componentChunkName":"component---src-templates-state-page-js","path":"/new-mexico","result":{"pageContext":{"slug":"new-mexico"}}}
+{"componentChunkName":"component---src-templates-state-page-js","path":"/new-mexico","result":{"data":{"googleSheetSiteDatesRow":{"state":"New Mexico","earlyVotingStartDate":"2020-10-06","earlyVotingEndDate":"2020-10-31"}},"pageContext":{"slug":"new-mexico"}}}

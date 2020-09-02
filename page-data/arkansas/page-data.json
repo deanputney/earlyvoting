@@ -1,1 +1,1 @@
-{"componentChunkName":"component---src-templates-state-page-js","path":"/arkansas","result":{"pageContext":{"slug":"arkansas"}}}
+{"componentChunkName":"component---src-templates-state-page-js","path":"/arkansas","result":{"data":{"googleSheetSiteDatesRow":{"state":"Arkansas","earlyVotingStartDate":"2020-10-19","earlyVotingEndDate":"2020-11-02"}},"pageContext":{"slug":"arkansas"}}}

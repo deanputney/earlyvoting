@@ -1,1 +1,1 @@
-{"componentChunkName":"component---src-templates-state-page-js","path":"/vermont","result":{"pageContext":{"slug":"vermont"}}}
+{"componentChunkName":"component---src-templates-state-page-js","path":"/vermont","result":{"data":{"googleSheetSiteDatesRow":{"state":"Vermont","earlyVotingStartDate":"2020-09-19","earlyVotingEndDate":"2020-11-02"}},"pageContext":{"slug":"vermont"}}}

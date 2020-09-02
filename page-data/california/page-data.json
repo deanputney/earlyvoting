@@ -1,1 +1,1 @@
-{"componentChunkName":"component---src-templates-state-page-js","path":"/california","result":{"pageContext":{"slug":"california"}}}
+{"componentChunkName":"component---src-templates-state-page-js","path":"/california","result":{"data":{"googleSheetSiteDatesRow":{"state":"California","earlyVotingStartDate":"2020-10-20","earlyVotingEndDate":"2020-11-02"}},"pageContext":{"slug":"california"}}}

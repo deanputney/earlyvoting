@@ -1,1 +1,1 @@
-{"componentChunkName":"component---src-templates-state-page-js","path":"/florida","result":{"pageContext":{"slug":"florida"}}}
+{"componentChunkName":"component---src-templates-state-page-js","path":"/florida","result":{"data":{"googleSheetSiteDatesRow":{"state":"Florida","earlyVotingStartDate":"2020-10-24","earlyVotingEndDate":"2020-10-31"}},"pageContext":{"slug":"florida"}}}

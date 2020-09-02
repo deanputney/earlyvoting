@@ -1,1 +1,1 @@
-{"componentChunkName":"component---src-templates-state-page-js","path":"/new-york","result":{"pageContext":{"slug":"new-york"}}}
+{"componentChunkName":"component---src-templates-state-page-js","path":"/new-york","result":{"data":{"googleSheetSiteDatesRow":{"state":"New York","earlyVotingStartDate":"2020-10-24","earlyVotingEndDate":"2020-11-01"}},"pageContext":{"slug":"new-york"}}}

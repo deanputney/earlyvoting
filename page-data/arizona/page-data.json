@@ -1,1 +1,1 @@
-{"componentChunkName":"component---src-templates-state-page-js","path":"/arizona","result":{"pageContext":{"slug":"arizona"}}}
+{"componentChunkName":"component---src-templates-state-page-js","path":"/arizona","result":{"data":{"googleSheetSiteDatesRow":{"state":"Arizona","earlyVotingStartDate":"2020-10-07","earlyVotingEndDate":"2020-10-30"}},"pageContext":{"slug":"arizona"}}}

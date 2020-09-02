@@ -1,1 +1,1 @@
-{"componentChunkName":"component---src-templates-state-page-js","path":"/west-virginia","result":{"pageContext":{"slug":"west-virginia"}}}
+{"componentChunkName":"component---src-templates-state-page-js","path":"/west-virginia","result":{"data":{"googleSheetSiteDatesRow":{"state":"West Virginia","earlyVotingStartDate":"2020-10-21","earlyVotingEndDate":"2020-10-31"}},"pageContext":{"slug":"west-virginia"}}}

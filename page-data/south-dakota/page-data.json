@@ -1,1 +1,1 @@
-{"componentChunkName":"component---src-templates-state-page-js","path":"/south-dakota","result":{"pageContext":{"slug":"south-dakota"}}}
+{"componentChunkName":"component---src-templates-state-page-js","path":"/south-dakota","result":{"data":{"googleSheetSiteDatesRow":{"state":"South Dakota","earlyVotingStartDate":"2020-09-19","earlyVotingEndDate":"2020-11-02"}},"pageContext":{"slug":"south-dakota"}}}

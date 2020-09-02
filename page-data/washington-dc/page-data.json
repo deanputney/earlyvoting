@@ -1,1 +1,1 @@
-{"componentChunkName":"component---src-templates-state-page-js","path":"/washington-dc","result":{"pageContext":{"slug":"washington-dc"}}}
+{"componentChunkName":"component---src-templates-state-page-js","path":"/washington-dc","result":{"data":{"googleSheetSiteDatesRow":{"state":"Washington DC","earlyVotingStartDate":"2020-10-19","earlyVotingEndDate":"2020-11-02"}},"pageContext":{"slug":"washington-dc"}}}

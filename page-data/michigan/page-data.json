@@ -1,1 +1,1 @@
-{"componentChunkName":"component---src-templates-state-page-js","path":"/michigan","result":{"pageContext":{"slug":"michigan"}}}
+{"componentChunkName":"component---src-templates-state-page-js","path":"/michigan","result":{"data":{"googleSheetSiteDatesRow":{"state":"Michigan","earlyVotingStartDate":"2020-09-19","earlyVotingEndDate":"2020-11-02"}},"pageContext":{"slug":"michigan"}}}

@@ -1,1 +1,1 @@
-{"componentChunkName":"component---src-templates-state-page-js","path":"/ohio","result":{"pageContext":{"slug":"ohio"}}}
+{"componentChunkName":"component---src-templates-state-page-js","path":"/ohio","result":{"data":{"googleSheetSiteDatesRow":{"state":"Ohio","earlyVotingStartDate":"2020-10-05","earlyVotingEndDate":"2020-11-02"}},"pageContext":{"slug":"ohio"}}}

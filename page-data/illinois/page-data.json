@@ -1,1 +1,1 @@
-{"componentChunkName":"component---src-templates-state-page-js","path":"/illinois","result":{"pageContext":{"slug":"illinois"}}}
+{"componentChunkName":"component---src-templates-state-page-js","path":"/illinois","result":{"data":{"googleSheetSiteDatesRow":{"state":"Illinois","earlyVotingStartDate":"2020-09-24","earlyVotingEndDate":"2020-11-02"}},"pageContext":{"slug":"illinois"}}}

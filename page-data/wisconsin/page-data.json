@@ -1,1 +1,1 @@
-{"componentChunkName":"component---src-templates-state-page-js","path":"/wisconsin","result":{"pageContext":{"slug":"wisconsin"}}}
+{"componentChunkName":"component---src-templates-state-page-js","path":"/wisconsin","result":{"data":{"googleSheetSiteDatesRow":{"state":"Wisconsin","earlyVotingStartDate":"2020-10-19","earlyVotingEndDate":"2020-10-30"}},"pageContext":{"slug":"wisconsin"}}}

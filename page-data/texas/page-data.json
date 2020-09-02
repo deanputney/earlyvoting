@@ -1,1 +1,1 @@
-{"componentChunkName":"component---src-templates-state-page-js","path":"/texas","result":{"pageContext":{"slug":"texas"}}}
+{"componentChunkName":"component---src-templates-state-page-js","path":"/texas","result":{"data":{"googleSheetSiteDatesRow":{"state":"Texas","earlyVotingStartDate":"2020-10-19","earlyVotingEndDate":"2020-10-30"}},"pageContext":{"slug":"texas"}}}

@@ -1,1 +1,1 @@
-{"componentChunkName":"component---src-templates-state-page-js","path":"/virginia","result":{"pageContext":{"slug":"virginia"}}}
+{"componentChunkName":"component---src-templates-state-page-js","path":"/virginia","result":{"data":{"googleSheetSiteDatesRow":{"state":"Virginia","earlyVotingStartDate":"2020-09-19","earlyVotingEndDate":"2020-10-31"}},"pageContext":{"slug":"virginia"}}}

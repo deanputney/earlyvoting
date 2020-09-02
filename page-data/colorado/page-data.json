@@ -1,1 +1,1 @@
-{"componentChunkName":"component---src-templates-state-page-js","path":"/colorado","result":{"pageContext":{"slug":"colorado"}}}
+{"componentChunkName":"component---src-templates-state-page-js","path":"/colorado","result":{"data":{"googleSheetSiteDatesRow":{"state":"Colorado","earlyVotingStartDate":"2020-10-19","earlyVotingEndDate":"2020-11-02"}},"pageContext":{"slug":"colorado"}}}

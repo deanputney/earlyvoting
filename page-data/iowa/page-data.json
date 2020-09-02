@@ -1,1 +1,1 @@
-{"componentChunkName":"component---src-templates-state-page-js","path":"/iowa","result":{"pageContext":{"slug":"iowa"}}}
+{"componentChunkName":"component---src-templates-state-page-js","path":"/iowa","result":{"data":{"googleSheetSiteDatesRow":{"state":"Iowa","earlyVotingStartDate":"2020-10-05","earlyVotingEndDate":"2020-11-02"}},"pageContext":{"slug":"iowa"}}}

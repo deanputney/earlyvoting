@@ -1,1 +1,1 @@
-{"componentChunkName":"component---src-templates-state-page-js","path":"/maryland","result":{"pageContext":{"slug":"maryland"}}}
+{"componentChunkName":"component---src-templates-state-page-js","path":"/maryland","result":{"data":{"googleSheetSiteDatesRow":{"state":"Maryland","earlyVotingStartDate":"2020-10-22","earlyVotingEndDate":"2020-10-29"}},"pageContext":{"slug":"maryland"}}}

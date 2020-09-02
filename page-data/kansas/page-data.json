@@ -1,1 +1,1 @@
-{"componentChunkName":"component---src-templates-state-page-js","path":"/kansas","result":{"pageContext":{"slug":"kansas"}}}
+{"componentChunkName":"component---src-templates-state-page-js","path":"/kansas","result":{"data":{"googleSheetSiteDatesRow":{"state":"Kansas","earlyVotingStartDate":"2020-10-27","earlyVotingEndDate":"2020-11-02"}},"pageContext":{"slug":"kansas"}}}
