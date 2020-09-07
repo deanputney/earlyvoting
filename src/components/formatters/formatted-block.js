@@ -1,7 +1,5 @@
 import '../style.scss';
 import React from 'react';
-import MultilineBlock from './multiline-block';
-import BulletedBlock from './bulleted-block';
 import ReactMarkdown from 'react-markdown';
 
 
