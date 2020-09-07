@@ -4,8 +4,7 @@ import './style.scss';
 import { statePageUri } from '../lib/common';
 import { dateDiffInDays, parseDate } from '../lib/dates';
 
-const StateRow = (data) => {
-  data = data.data
+const StateRow = ({ data }) => {
   var statePage = statePageUri(data.state);
 
   var endDate = parseDate(data.earlyVotingEndDate)
