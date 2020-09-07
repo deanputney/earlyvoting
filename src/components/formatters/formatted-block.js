@@ -5,10 +5,16 @@ import BulletedBlock from './bulleted-block';
 
 
 const maybeMultilineText = (text) => {
+    if (text == null) {
+        return false;
+    }
     return text.match(/[\r?\n]+/g) !== null
 }
 
 const maybeBulletedText = (text) => {
+    if (text == null) {
+        return false;
+    }
     var match = text.match(/\*/g);
     if ((match !== null) && match.length > 1) {
         return true;
@@ -23,6 +29,7 @@ const FormattedBlock = ({ text }) => {
     if (maybeMultilineText(text)) {
         return <MultilineBlock text={text}/>
     }
+    return text;
 };
 
 export default FormattedBlock;

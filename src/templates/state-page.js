@@ -18,61 +18,54 @@ export default function StatePage({ data }) {
             <div className="container">
               <div className="columns">
                 <div class="column content is-8-desktop is-offset-2-desktop is-fullwidth-mobile">
-                    <Link to={stateData.sosElectionWebsite} class="button">
-                      <span role="img">🏛</span> {stateData.fullStateName} Election Website
-                    </Link>&nbsp;
-                    <Link to={stateData.year2020OfficialElectionCalendar} class="button">
-                      <span role="img">🗓</span> {stateData.fullStateName} Election Calendar
-                    </Link>&nbsp;
-                    {(
-                      (stateData) => {
-                        if (canEarlyVote(stateData)) {
-                          return (
-                            <Link to={stateData.officialInfoEarlyVoting} class="button">
-                              <span role="img">ℹ️</span> {stateData.fullStateName} Early Voting Info
-                            </Link>
-                          );
-                        }
+                  <Link to={stateData.sosElectionWebsite} class="button">
+                    <span role="img">🏛</span> {stateData.fullStateName} Election Website
+                  </Link>&nbsp;
+                  <Link to={stateData.year2020OfficialElectionCalendar} class="button">
+                    <span role="img">🗓</span> {stateData.fullStateName} Election Calendar
+                  </Link>&nbsp;
+                  {(
+                    (stateData) => {
+                      if (canEarlyVote(stateData)) {
+                        return (
+                          <Link to={stateData.officialInfoEarlyVoting} class="button">
+                            <span role="img">ℹ️</span> {stateData.fullStateName} Early Voting Info
+                          </Link>
+                        );
                       }
-                    )(stateData)}
+                    }
+                  )(stateData)}
 
 
 
-                    <p>early voting in {stateData.state}</p>
+                  <p>early voting in {stateData.state}</p>
 
-                    <p>Early voting is [Open | Starts in X days (date) | Not available in your state]</p>
+                  <p>Early voting is [Open | Starts in X days (date) | Not available in your state]</p>
 
-                    <p>You have until {stateData.year2020EarlyVotingEnds} to vote before election day.</p>
-
-
-
-                    <h3 class="title is-3">Can you early vote in person?</h3>
-
-                    <h3 class="title is-3">Can you early vote by mail?</h3>
-                    <div class="subtitle is-5">{stateData.vbmAbsenteeBallotRules}</div>
-
-                    <FormattedBlock text={stateData.earlyVotingNotes} />
+                  <p>You have until {stateData.year2020EarlyVotingEnds} to vote before election day.</p>
 
 
 
-                    <h3 class="title is-3">What about on election day?</h3>
+                  <h3 class="title is-3">Can you early vote in person?</h3>
 
-                    <p>ID requirements: {stateData.idRequirementsSdr}</p>
+                  <h3 class="title is-3">Can you early vote by mail?</h3>
+                  <div class="subtitle is-5">Check the&nbsp;
+                    <Link to={stateData.officialInfoVbm}>
+                      official vote by mail info for {stateData.fullStateName}.
+                    </Link>
+                  </div>
+
+                  <FormattedBlock text={stateData.vbmAbsenteeBallotRules} />
+
+                  <FormattedBlock text={stateData.earlyVotingNotes} />
 
 
-
-                    <h3 class="title is-3">Can you early vote by mail?</h3>
-                    <div class="subtitle is-5">Check the&nbsp;
-                      <Link to={stateData.officialInfoVbm}>
-                        official vote by mail info for {stateData.fullStateName}.
-                      </Link>
-                    </div>
-
-                    <p>{stateData.vbmAbsenteeBallotRules}</p>
-
-                    <p>{stateData.earlyVotingNotes}</p>
 
                   <h3 class="title is-3">What about on election day?</h3>
+
+                  <p>ID requirements: {stateData.idRequirementsSdr}</p>
+
+
 
                   <h3 class="title is-3">How do I make sure I'm registered to vote?</h3>
                   <div class="subtitle is-5">Check that <Link to={stateData.externalToolVerifyStatus}>
