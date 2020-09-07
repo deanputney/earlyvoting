@@ -18,27 +18,28 @@ export default function StatePage({ data }) {
             <div className="container">
               <div className="columns">
                 <div class="column content is-8-desktop is-offset-2-desktop is-fullwidth-mobile">
-                  <Link to={stateData.sosElectionWebsite} class="button">
-                    <span role="img">🏛</span> {stateData.fullStateName} Election Website
-                  </Link>&nbsp;
-                  <Link to={stateData.year2020OfficialElectionCalendar} class="button">
-                    <span role="img">🗓</span> {stateData.fullStateName} Election Calendar
-                  </Link>&nbsp;
-                  {(
-                    (stateData) => {
-                      if (canEarlyVote(stateData)) {
-                        return (
-                          <Link to={stateData.officialInfoEarlyVoting} class="button">
-                            <span role="img">ℹ️</span> {stateData.fullStateName} Early Voting Info
-                          </Link>
-                        );
+                  <p>
+                    {(
+                      (stateData) => {
+                        if (canEarlyVote(stateData)) {
+                          return (
+                            <React.Fragment>
+                              <Link to={stateData.officialInfoEarlyVoting} class="button is-primary">
+                                {stateData.fullStateName} Early Voting Info
+                              </Link>&nbsp;
+                            </React.Fragment>
+                          );
+                        }
                       }
-                    }
-                  )(stateData)}
+                    )(stateData)}
+                    <Link to={stateData.sosElectionWebsite} class="button">
+                      {stateData.fullStateName} Election Website
+                    </Link>&nbsp;
+                    <Link to={stateData.year2020OfficialElectionCalendar} class="button">
+                      {stateData.fullStateName} Election Calendar
+                    </Link>&nbsp;
+                  </p>
 
-
-
-                  <p>early voting in {stateData.state}</p>
 
                   <p>Early voting is [Open | Starts in X days (date) | Not available in your state]</p>
 
@@ -63,7 +64,9 @@ export default function StatePage({ data }) {
 
                   <h3 class="title is-3">What about on election day?</h3>
 
-                  <p>ID requirements: {stateData.idRequirementsSdr}</p>
+                  <h5>ID requirements</h5>
+
+                  <FormattedBlock text={stateData.idRequirementsSdr} />
 
 
 
