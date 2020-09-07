@@ -48,10 +48,15 @@ export default function StatePage({ data }) {
 
                     <h3 class="title is-3">Can you early vote in person?</h3>
 
-                  <h2 class="title is-2">Can you early vote by mail?</h2>
-                  <h4 class="subtitle is-4">{stateData.vbmAbsenteeBallotRules}</h4>
-                      <FormattedBlock text={stateData.earlyVotingNotes} />
-                  <h2 class="title is-2">What about on election day?</h2>
+                    <h3 class="title is-3">Can you early vote by mail?</h3>
+                    <div class="subtitle is-5">{stateData.vbmAbsenteeBallotRules}</div>
+
+                    <FormattedBlock text={stateData.earlyVotingNotes} />
+
+
+
+                    <h3 class="title is-3">What about on election day?</h3>
+
                     <p>ID requirements: {stateData.idRequirementsSdr}</p>
 
 
