@@ -4,7 +4,7 @@ import { graphql, Link } from 'gatsby';
 
 import Helmet from '../components/helmet';
 import StateHeader from '../components/state/header';
-
+import FormattedBlock from '../components/formatters/formatted-block';
 import canEarlyVote from '../hooks/state-data';
 
 export default function StatePage({ data }) {
@@ -48,6 +48,10 @@ export default function StatePage({ data }) {
 
                     <h3 class="title is-3">Can you early vote in person?</h3>
 
+                  <h2 class="title is-2">Can you early vote by mail?</h2>
+                  <h4 class="subtitle is-4">{stateData.vbmAbsenteeBallotRules}</h4>
+                      <FormattedBlock text={stateData.earlyVotingNotes} />
+                  <h2 class="title is-2">What about on election day?</h2>
                     <p>ID requirements: {stateData.idRequirementsSdr}</p>
 
 
@@ -71,7 +75,7 @@ export default function StatePage({ data }) {
                     </Link>
                   </div>
 
-                  <p>{stateData.registrationRules}</p>
+                  <FormattedBlock text={stateData.registrationRules}/>
                   <br/>
 
 
