@@ -2,6 +2,7 @@ import '../style.scss';
 import React from 'react';
 import MultilineBlock from './multiline-block';
 import BulletedBlock from './bulleted-block';
+import ReactMarkdown from 'react-markdown';
 
 
 const maybeMultilineText = (text) => {
@@ -17,12 +18,7 @@ const maybeBulletedText = (text) => {
 }
 
 const FormattedBlock = ({ text }) => {
-    if (maybeBulletedText(text)) {
-        return <BulletedBlock text={text} />
-    }
-    if (maybeMultilineText(text)) {
-        return <MultilineBlock text={text}/>
-    }
+    return <ReactMarkdown source={text} />
 };
 
 export default FormattedBlock;
