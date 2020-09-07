@@ -5,6 +5,8 @@ import { graphql, Link } from 'gatsby';
 import Helmet from '../components/helmet';
 import StateHeader from '../components/state/header';
 
+import canEarlyVote from '../hooks/state-data';
+
 export default function StatePage({ data }) {
     const stateData = data.googleSheetVaApiDataRow
       return (
@@ -18,14 +20,22 @@ export default function StatePage({ data }) {
                 <div class="column is-8-desktop is-offset-2-desktop is-fullwidth-mobile">
                   <p>
                     <Link to={stateData.sosElectionWebsite} class="button">
-                      {stateData.fullStateName} Election Website
+                      <span role="img">🏛</span> {stateData.fullStateName} Election Website
                     </Link>&nbsp;
                     <Link to={stateData.year2020OfficialElectionCalendar} class="button">
-                      {stateData.fullStateName} Election Calendar
+                      <span role="img">🗓</span> {stateData.fullStateName} Election Calendar
                     </Link>&nbsp;
-                    <Link to={stateData.officialInfoEarlyVoting} class="button">
-                      {stateData.fullStateName} Early Voting Info
-                    </Link>
+                    {(
+                      (stateData) => {
+                        if (canEarlyVote(stateData)) {
+                          return (
+                            <Link to={stateData.officialInfoEarlyVoting} class="button">
+                              <span role="img">ℹ️</span> {stateData.fullStateName} Early Voting Info
+                            </Link>
+                          );
+                        }
+                      }
+                    )(stateData)}
                   </p>
 
                   early voting in {stateData.state}<br/>
@@ -34,13 +44,13 @@ export default function StatePage({ data }) {
 
                   You have until {stateData.year2020EarlyVotingEnds} to vote before election day.<br/>
 
+                  <h2 class="title is-2">Can you early vote in person?</h2>
+                  ID requirements: {stateData.idRequirementsSdr}
+
                   <h2 class="title is-2">Can you early vote by mail?</h2>
                   <h4 class="subtitle is-4">{stateData.vbmAbsenteeBallotRules}</h4>
 
                   <p>{stateData.earlyVotingNotes}</p>
-
-                  <h2 class="title is-2">Can you early vote in person?</h2>
-                  ID requirements: {stateData.idRequirementsSdr}
 
                   <h2 class="title is-2">What about on election day?</h2>
 
@@ -58,7 +68,7 @@ export default function StatePage({ data }) {
                   <p>{stateData.idRequirementsOvr}</p>
 
                   <p>
-                    <Link to={stateData.externalToolOvr}>Register to vote online here</Link>
+                    <Link to={stateData.externalToolOvr} class="button">Register to vote online here</Link>
                   </p>
 
                 </div>
