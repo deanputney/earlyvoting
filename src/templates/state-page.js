@@ -16,12 +16,17 @@ export default function StatePage({ data }) {
             <div className="container">
               <div className="columns">
                 <div class="column is-8-desktop is-offset-2-desktop is-fullwidth-mobile">
-                  <Link to={stateData.year2020OfficialElectionCalendar} class="button">
-                    {stateData.fullStateName} Election Calendar
-                  </Link>&nbsp;
-                  <Link to={stateData.officialInfoEarlyVoting} class="button">
-                    {stateData.fullStateName} Early Voting Info
-                  </Link>
+                  <p>
+                    <Link to={stateData.sosElectionWebsite} class="button">
+                      {stateData.fullStateName} Election Website
+                    </Link>&nbsp;
+                    <Link to={stateData.year2020OfficialElectionCalendar} class="button">
+                      {stateData.fullStateName} Election Calendar
+                    </Link>&nbsp;
+                    <Link to={stateData.officialInfoEarlyVoting} class="button">
+                      {stateData.fullStateName} Early Voting Info
+                    </Link>
+                  </p>
 
                   early voting in {stateData.state}<br/>
 
@@ -39,6 +44,22 @@ export default function StatePage({ data }) {
 
                   <h2 class="title is-2">What about on election day?</h2>
 
+                  <h2 class="title is-2">What about voter registration?</h2>
+                  <h4 class="subtitle is-4">Check that <Link to={stateData.externalToolVerifyStatus}>
+                      you're registered to vote.
+                    </Link>
+                  </h4>
+
+                  <p>{stateData.registrationRules}</p>
+                  <br/>
+
+
+                  <h5 class="subtitle is-5">Can I register online?</h5>
+                  <p>{stateData.idRequirementsOvr}</p>
+
+                  <p>
+                    <Link to={stateData.externalToolOvr}>Register to vote online here</Link>
+                  </p>
 
                 </div>
               </div>
