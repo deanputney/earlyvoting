@@ -4,12 +4,23 @@ import './style.scss';
 import { statePageUri } from '../lib/common';
 import { dateDiffInDays, parseDate } from '../lib/dates';
 
+
+const cantDisplayStateRow = (row) => {
+  return (row.earlyVotingStartDate === null) || (row.earlyVotingEndDate === null)
+}
+
+
 const StateRow = (data) => {
   data = data.data
+  if (cantDisplayStateRow(data)) {
+    return null
+  }
+
   var statePage = statePageUri(data.state);
 
   var endDate = parseDate(data.earlyVotingEndDate)
   var startDate = parseDate(data.earlyVotingStartDate)
+
   data.shortStartDate = (startDate.month() + 1) + '/' + (startDate.date() + 1)
 
   const daysToVote = dateDiffInDays(startDate, endDate)
