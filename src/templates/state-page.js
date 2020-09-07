@@ -17,8 +17,7 @@ export default function StatePage({ data }) {
           <section className="section">
             <div className="container">
               <div className="columns">
-                <div class="column is-8-desktop is-offset-2-desktop is-fullwidth-mobile">
-                  <p>
+                <div class="column content is-8-desktop is-offset-2-desktop is-fullwidth-mobile">
                     <Link to={stateData.sosElectionWebsite} class="button">
                       <span role="img">🏛</span> {stateData.fullStateName} Election Website
                     </Link>&nbsp;
@@ -36,35 +35,48 @@ export default function StatePage({ data }) {
                         }
                       }
                     )(stateData)}
-                  </p>
 
-                  early voting in {stateData.state}<br/>
 
-                  Early voting is [Open | Starts in X days (date) | Not available in your state]<br/>
 
-                  You have until {stateData.year2020EarlyVotingEnds} to vote before election day.<br/>
+                    <p>early voting in {stateData.state}</p>
 
-                  <h2 class="title is-2">Can you early vote in person?</h2>
-                  ID requirements: {stateData.idRequirementsSdr}
+                    <p>Early voting is [Open | Starts in X days (date) | Not available in your state]</p>
 
-                  <h2 class="title is-2">Can you early vote by mail?</h2>
-                  <h4 class="subtitle is-4">{stateData.vbmAbsenteeBallotRules}</h4>
+                    <p>You have until {stateData.year2020EarlyVotingEnds} to vote before election day.</p>
 
-                  <p>{stateData.earlyVotingNotes}</p>
 
-                  <h2 class="title is-2">What about on election day?</h2>
 
-                  <h2 class="title is-2">What about voter registration?</h2>
-                  <h4 class="subtitle is-4">Check that <Link to={stateData.externalToolVerifyStatus}>
+                    <h3 class="title is-3">Can you early vote in person?</h3>
+
+                    <p>ID requirements: {stateData.idRequirementsSdr}</p>
+
+
+
+                    <h3 class="title is-3">Can you early vote by mail?</h3>
+                    <div class="subtitle is-5">Check the&nbsp;
+                      <Link to={stateData.officialInfoVbm}>
+                        official vote by mail info for {stateData.fullStateName}.
+                      </Link>
+                    </div>
+
+                    <p>{stateData.vbmAbsenteeBallotRules}</p>
+
+                    <p>{stateData.earlyVotingNotes}</p>
+
+                  <h3 class="title is-3">What about on election day?</h3>
+
+                  <h3 class="title is-3">How do I make sure I'm registered to vote?</h3>
+                  <div class="subtitle is-5">Check that <Link to={stateData.externalToolVerifyStatus}>
                       you're registered to vote.
                     </Link>
-                  </h4>
+                  </div>
 
                   <p>{stateData.registrationRules}</p>
                   <br/>
 
 
-                  <h5 class="subtitle is-5">Can I register online?</h5>
+                  <h4 class="subtitle is-4">Can I register online?</h4>
+
                   <p>{stateData.idRequirementsOvr}</p>
 
                   <p>
