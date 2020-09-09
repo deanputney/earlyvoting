@@ -1,6 +1,6 @@
 
 const canEarlyVote = (stateData) => {
-  if (stateData.sdrEarlyVoting == 'True') {
+  if (stateData.earlyVotingStarts != 'N/A') {
     return true;
   }
   return false;
