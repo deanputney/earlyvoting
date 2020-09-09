@@ -8,7 +8,7 @@ import FormattedBlock from '../components/formatters/formatted-block';
 import canEarlyVote from '../hooks/state-data';
 
 export default function StatePage({ data }) {
-    const stateData = data.googleSheetVaApiDataRow
+    const stateData = data.googleSheetEarlyVotingDataRow
       return (
         <div>
           <Helmet />
@@ -98,95 +98,26 @@ export default function StatePage({ data }) {
 
 export const query = graphql`
   query($slug: String!) {
-    googleSheetVaApiDataRow(fields: { slug: { eq: $slug } }) {
-      earlyVotingStarts
-      vbmDeadlineMail
-      externalToolVbmApplication
-      vbmUniversal
-      vbmFirstDayToApply
-      leoOverseasVoters
-      registrationDirections
-      sosContactEmail
-      earlyVotingNotes
-      year2020BallotReturnDeadlineInPerson
-      vbmNotes
-      registrationSubmissionPhone
-      year2020EarlyVotingEnds
-      vbmVotedBallotDeadlineInPerson
-      year2020VbmRequestDeadlineOnline
-      registrationSubmissionFax
-      alertRegistration
-      alertVbm
-      pollsClose
-      year2020RegistrationDeadlineByMail
-      idRequirementsSdr
-      registrationNvrfBox6
-      registrationDeadlineInPerson
-      vbmAppSubmissionEmail
-      registrationDeadlineOnline
-      vbmOvbmDirections
-      vbmAbsenteeBallotRules
-      year2020OfficialElectionCalendar
-      officialInfoEarlyVoting
-      officialInfoVoterId
-      year2020EarlyVotingStarts
-      sdrNotes
-      registrationNvrfSubmissionAddress
-      pollsOpen
-      vbmNoExcuse
-      idRequirementsInPersonVoting
-      vbmPermanentDisabled
-      vbmStateProvidesDropboxes
-      sdrEarlyVoting
-      vbmAppSubmissionPhone
-      vbmAppSubmissionFax
-      vbmWarnings
-      registrationSubmissionInPerson
-      year2020VbmRequestDeadlineByMail
-      vbmStateProvidesBallotPostage
-      vbmPermanentAnyone
-      sdrElectionDay
-      year2020LegalChanges
-      vbmDeadlineOnline
-      year2020BallotReturnDeadlineByMail
-      sosElectionWebsite
-      vbmApplicationDirections
-      registrationSubmissionMail
-      officialInfoFelon
-      overseasFvapDirections
-      registrationSubmissionEmail
-      registrationNvrfBox7
-      idRequirementsOvr
-      externalToolPollingPlace
-      overseasFvapTool
-      externalToolOvr
-      officialInfoVbm
-      pdfAbsenteeForm
-      officialInfoStudents
-      sosPhoneNumber
-      year2020RegistrationDeadlineInPerson
-      leoAbsenteeBallots
-      externalToolAbsenteeBallotTracker
-      vbmDeadlineInPerson
-      year2020VbmRequestDeadlineByInPerson
-      registrationAutomaticExists
-      vbmAppSubmissionMail
-      vbmVotedBallotDeadlineMail
-      year2020RegistrationDeadlineOnline
-      externalToolVerifyStatus
-      registrationNvrfBox8
-      warningsRegistration
-      officialInfoRegistration
-      idRequirementsVbm
-      registrationRules
-      leoVoterRegistration
-      year2020GeneralElectionDate
-      registrationDeadlineMail
-      vbmAppSubmissionInPerson
-      earlyVotingEnds
+    googleSheetEarlyVotingDataRow(fields: { slug: { eq: $slug } }) {
       state
       stateSlug
       fullStateName
+      earlyVotingStarts
+      earlyVotingEnds
+      year2020EarlyVotingEnds
+      earlyVotingNotes
+      officialInfoEarlyVoting
+      year2020OfficialElectionCalendar
+      officialInfoVoterId
+      year2020VbmRequestDeadlineByMail
+      officialInfoVbm
+      vbmAbsenteeBallotRules
+      officialInfoStudents
+      externalToolOvr
+      idRequirementsOvr
+      idRequirementsSdr
+      registrationRules
+      externalToolVerifyStatus
     }
   }
 `

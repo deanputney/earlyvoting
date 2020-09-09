@@ -18,13 +18,20 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
             value: node.stateSlug,
         })
     }
+    else if (node.internal.type === `googleSheetEarlyVotingDataRow`) {
+        createNodeField({
+            node,
+            name: `slug`,
+            value: node.stateSlug,
+        })
+    }
   }
 
 exports.createPages = async ({ graphql, actions }) => {
     const { createPage } = actions
     const result = await graphql(`
         query {
-            allGoogleSheetVaApiDataRow {
+            allGoogleSheetEarlyVotingDataRow {
                 edges {
                     node {
                         fields {
@@ -35,8 +42,8 @@ exports.createPages = async ({ graphql, actions }) => {
             }
         }
     `)
-    
-    result.data.allGoogleSheetVaApiDataRow.edges.forEach(({ node }) => {
+
+    result.data.allGoogleSheetEarlyVotingDataRow.edges.forEach(({ node }) => {
         createPage({
             path: node.fields.slug,
             component: path.resolve(`./src/templates/state-page.js`),
