@@ -58,7 +58,7 @@ export default function StatePage({ data }) {
 
                   <FormattedBlock text={stateData.vbmAbsenteeBallotRules} />
 
-                  <FormattedBlock text={stateData.earlyVotingNotes} />
+                  <FormattedBlock text={stateData.earlyVotingNotesCombined} />
 
 
 
@@ -106,6 +106,7 @@ export const query = graphql`
       earlyVotingEnds
       year2020EarlyVotingEnds
       earlyVotingNotes
+      earlyVotingNotesCombined
       officialInfoEarlyVoting
       year2020OfficialElectionCalendar
       officialInfoVoterId
