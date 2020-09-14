@@ -1,5 +1,5 @@
 import React from "react"
-import './style.scss';
+import '../components/style.scss';
 import { graphql, Link } from 'gatsby';
 
 import Helmet from '../components/helmet';
