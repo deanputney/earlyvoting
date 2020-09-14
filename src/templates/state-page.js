@@ -5,6 +5,7 @@ import { graphql, Link } from 'gatsby';
 import Helmet from '../components/helmet';
 import StateHeader from '../components/state/header';
 import FormattedBlock from '../components/formatters/formatted-block';
+import StateEarlyVotingCountdown from '../components/state-early-voting-countdown';
 import canEarlyVote from '../hooks/state-data';
 
 export default function StatePage({ data }) {
@@ -24,7 +25,7 @@ export default function StatePage({ data }) {
                         if (canEarlyVote(stateData)) {
                           return (
                             <React.Fragment>
-                              <Link to={stateData.officialInfoEarlyVoting} class="button is-primary">
+                              <Link to={stateData.officialInfoEarlyVoting} class="button is-link">
                                 {stateData.fullStateName} Early Voting Info
                               </Link>&nbsp;
                             </React.Fragment>
@@ -40,12 +41,8 @@ export default function StatePage({ data }) {
                     </Link>&nbsp;
                   </p>
 
-
-                  <p>Early voting is [Open | Starts in X days (date) | Not available in your state]</p>
-
-                  <p>You have until {stateData.year2020EarlyVotingEnds} to vote before election day.</p>
-
-
+                  <StateEarlyVotingCountdown data={stateData}/>
+            
 
                   <h3 class="title is-3">Can you early vote in person?</h3>
 
@@ -58,7 +55,7 @@ export default function StatePage({ data }) {
 
                   <FormattedBlock text={stateData.vbmAbsenteeBallotRules} />
 
-                  <FormattedBlock text={stateData.earlyVotingNotes} />
+                  <FormattedBlock text={stateData.earlyVotingNotesCombined} />
 
 
 
@@ -104,8 +101,10 @@ export const query = graphql`
       fullStateName
       earlyVotingStarts
       earlyVotingEnds
+      year2020EarlyVotingStarts
       year2020EarlyVotingEnds
       earlyVotingNotes
+      earlyVotingNotesCombined
       officialInfoEarlyVoting
       year2020OfficialElectionCalendar
       officialInfoVoterId
