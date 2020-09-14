@@ -1,9 +1,52 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { StaticQuery, graphql } from 'gatsby'
 
 import './style.scss';
 
 import voteAmericaLogo from '../images/vote-america-logo.png';
 import Navbar from './navbar';
+
+import { statePageUri } from '../lib/common';
+
+class StateSelect extends Component {
+	constructor(props) {
+    super(props);
+    this.state = {
+
+    }; // initialise state
+    this.data = props.data;
+
+		// Make sure to bind handleChange or you can make use of arrow function
+
+		this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(e) {
+    const targetValue = e.target.value;
+
+		// Then you can do whatever you want to do with the value
+		window.location.href = targetValue;
+  }
+
+  render() {
+  	return (
+			<select onChange={ this.handleChange }>
+			  <option>YOUR STATE</option>
+	      {
+	        this.data.allGoogleSheetVaApiDataRow.nodes.map(stateSelectOption)
+	      }
+			</select>
+		);
+  }
+}
+
+const stateSelectOption = (data) => {
+	var statePage = statePageUri(data.stateSlug);
+
+	return (
+		<option value={ statePage }>{ data.fullStateName }</option>
+	);
+}
 
 const Header = ({ siteTitle }) => (
 	<section className="hero gradientBg is-halfheight">
@@ -18,10 +61,21 @@ const Header = ({ siteTitle }) => (
 							<p className="subtitle has-text-white is-size-3">
 								I live in
 								<div class="select is-medium is-primary state-dropdown">
-								  <select>
-								    <option>YOUR STATE</option>
-								    <option>With options</option>
-								  </select>
+									<StaticQuery
+									query={graphql`
+										{
+											allGoogleSheetVaApiDataRow {
+											  nodes {
+											  	stateSlug
+											    fullStateName
+											  }
+											}
+										}
+									`}
+									render={data => (
+										<StateSelect data={ data } />
+									)}
+									/>
 								</div>
 								and I'm ready to get this over with!
 							</p>
