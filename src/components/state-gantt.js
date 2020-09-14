@@ -54,31 +54,25 @@ const StateGantt = () => (
     }
   `}
   render={data => (
-  <div>
-    <section className="section">
-      <div className="container">
-        <div class="columns">
-          <div class="column gantt-column is-10-desktop is-offset-1-desktop is-fullwidth-mobile">
-            <table class="gantt table is-fullwidth">
-              <thead>
-                <th></th>
-                <td colspan="45" align="right">Election Day is November 3rd</td>
-              </thead>
-              <tr>
-                <td class="bars" colspan="46">
-                  <table class="is-fullwidth is-fullwidth-mobile">
-                    {
-                      data.allGoogleSheetSiteDatesRow.nodes.map(layoutStateRows)
-                    }
-                  </table>
-                </td>
-              </tr>
-            </table>
-          </div>
-        </div>
+    <div class="columns">
+      <div class="column gantt-column is-10-desktop is-offset-1-desktop is-fullwidth-mobile">
+        <table class="gantt table is-fullwidth">
+          <thead>
+            <th></th>
+            <td colspan="45" align="right">Election Day is November 3rd</td>
+          </thead>
+          <tr>
+            <td class="bars" colspan="46">
+              <table class="is-fullwidth is-fullwidth-mobile">
+                {
+                  data.allGoogleSheetSiteDatesRow.nodes.map(layoutStateRows)
+                }
+              </table>
+            </td>
+          </tr>
+        </table>
       </div>
-    </section>
-  </div>
+    </div>
   )}
   />
 );
