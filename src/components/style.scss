@@ -1,5 +1,5 @@
 // Importing variables
-@import './variables.scss';
+@import 'variables';
 
 // Importing Bulma from node_modules
 @import '~bulma/bulma.sass';
@@ -17,6 +17,17 @@
 		color: $primary-color;
 		white-space: nowrap;
 	}
+
+  .state-dropdown {
+    margin-top: -.2em;
+    margin-left: 0.4em;
+    margin-right: 0.4em;
+
+    select {
+      border-width: 2px;
+      color: $primary-color;
+    }
+  }
 }
 
 .center {
