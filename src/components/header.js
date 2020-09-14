@@ -48,6 +48,25 @@ const stateSelectOption = (data) => {
 	);
 }
 
+const StateSelectDiv = ({ data }) => (
+	<React.Fragment>
+		<p className="subtitle has-text-white is-size-3 is-hidden-mobile">
+			I vote in
+			<div class="select is-medium is-primary state-dropdown">
+				<StateSelect data={ data } />
+			</div>
+			and I'm ready to get this over with!
+		</p>
+
+		<p className="subtitle has-text-white is-size-3 is-hidden-desktop">
+			I vote in
+			<div class="select is-medium is-primary state-dropdown">
+				<StateSelect data={ data } />
+			</div>
+		</p>
+	</React.Fragment>
+)
+
 const Header = ({ siteTitle }) => (
 	<section className="hero gradientBg is-halfheight">
 		<div className="hero-body">
@@ -58,28 +77,22 @@ const Header = ({ siteTitle }) => (
 							<h1 className="is-uppercase is-size-1 has-text-white">
 								You can vote early in <span class="hilight">38 states</span>.
 							</h1>
-							<p className="subtitle has-text-white is-size-3">
-								I live in
-								<div class="select is-medium is-primary state-dropdown">
-									<StaticQuery
-									query={graphql`
-										{
-											allGoogleSheetVaApiDataRow {
-											  nodes {
-											  	stateSlug
-											    fullStateName
-											  }
-											}
-										}
-									`}
-									render={data => (
-										<StateSelect data={ data } />
-									)}
-									/>
-								</div>
-								and I'm ready to get this over with!
-							</p>
 
+							<StaticQuery
+							query={graphql`
+								{
+									allGoogleSheetVaApiDataRow {
+									  nodes {
+									  	stateSlug
+									    fullStateName
+									  }
+									}
+								}
+							`}
+							render={data => (
+								<StateSelectDiv data={ data } />
+							)}
+							/>
 
 						</div>
 					</div>
