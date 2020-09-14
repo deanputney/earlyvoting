@@ -8,6 +8,10 @@ import FormattedBlock from '../components/formatters/formatted-block';
 import StateEarlyVotingCountdown from '../components/state-early-voting-countdown';
 import canEarlyVote from '../hooks/state-data';
 
+const hasInPersonEarlyVotingInfo = (stateData) => {
+  return (stateData.earlyVotingInPersonInfoManual !== null)
+}
+
 export default function StatePage({ data }) {
     const stateData = data.googleSheetEarlyVotingDataRow
       return (
@@ -45,7 +49,24 @@ export default function StatePage({ data }) {
             
 
                   <h3 class="title is-3">Can you early vote in person?</h3>
-
+                  <div>
+                    {(
+                      (stateData) => {
+                        if (hasInPersonEarlyVotingInfo(stateData)) {
+                          return stateData.earlyVotingInPersonInfoManual
+                        }
+                        else {
+                          return (
+                            <React.Fragment>
+                              Check the <Link to={stateData.officialInfoVbm}>
+                                official early voting info for {stateData.fullStateName}.
+                                             </Link>
+                            </React.Fragment>
+                          )
+                        }
+                      }
+                    )(stateData)}
+                  </div>
                   <h3 class="title is-3">Can you early vote by mail?</h3>
                   <div class="subtitle is-5">Check the&nbsp;
                     <Link to={stateData.officialInfoVbm}>
@@ -117,6 +138,7 @@ export const query = graphql`
       idRequirementsSdr
       registrationRules
       externalToolVerifyStatus
+      earlyVotingInPersonInfoManual
     }
   }
 `
