@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-bulma-quickstart",
-  "description": "A Project to bootstrap your next Gatsby + Bulma site.",
-  "version": "1.10.3",
-  "author": "Aman Mittal <amandeepmittal@live.com>",
+  "name": "earlyvoting.com",
+  "description": "Information on how to vote early in all states that allow it",
+  "version": "0.1.0",
+  "author": "Early Voting Contributors <contact@earlyvoting.com>",
   "dependencies": {
     "bulma": "^0.9.0",
     "gatsby": "^2.24.2",
@@ -28,11 +28,9 @@
     "react-markdown": "^4.3.1"
   },
   "keywords": [
-    "gatsby",
-    "bulma",
-    "starter",
-    "kit",
-    "template"
+    "voting",
+    "democracy",
+    "absentee"
   ],
   "license": "MIT",
   "scripts": {
@@ -48,6 +46,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/amandeepmittal/gatsby-bulma-quickstart"
+    "url": "https://github.com/deanputney/earlyvoting"
   }
 }

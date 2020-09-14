@@ -1,5 +1,6 @@
 import React from 'react';
 import { withPrefix } from 'gatsby';
+import favicon from '../images/vbm-logo-small.svg'
 import useSiteMetadata from '../hooks/use-site-metadata';
 import Helmet from 'react-helmet';
 import shareImage from '../images/share.png';
@@ -9,6 +10,7 @@ export default () => {
 
 	return (
 		<Helmet>
+			<link rel="icon" href={favicon}/>
 			<meta
 				name="viewport"
 				content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"
