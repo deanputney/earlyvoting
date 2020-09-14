@@ -19,12 +19,12 @@ const Footer = () => (
       <footer className='footer center has-background-light'>
         <div className='content has-text-centered'>
           <p className='is-size-4'>
-            By Jared Kofron and Dean Putney
+            Data provided by <a href={data.site.siteMetadata.voteAmerica}>VoteAmerica</a> and your local government
           </p>
-          <article className='media center'>
-            <a href={data.site.siteMetadata.voteAmerica}>Data provided by VoteAmerica</a>
-            &nbsp;
-          </article>
+
+          <p className='is-size-5'>
+            Contribute on <a href={data.site.siteMetadata.githubRepository}>Github</a>
+          </p>
           &nbsp;
         </div>
       </footer>
