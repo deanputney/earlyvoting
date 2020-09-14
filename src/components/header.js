@@ -75,7 +75,7 @@ const Header = ({ siteTitle }) => (
 					<div className="media-content">
 						<div className="content">
 							<h1 className="is-uppercase is-size-1 has-text-white">
-								You can vote early in <span class="hilight">38 states</span>.
+								You can vote early in <span class="hilight">41 states</span>.
 							</h1>
 
 							<StaticQuery
