@@ -3,6 +3,7 @@ import '../components/style.scss';
 import { graphql, Link } from 'gatsby';
 
 import Helmet from '../components/helmet';
+import SiteDescription from '../components/site-description';
 import StateHeader from '../components/state/header';
 import FormattedBlock from '../components/formatters/formatted-block';
 import StateEarlyVotingCountdown from '../components/state-early-voting-countdown';
@@ -21,8 +22,14 @@ export default function StatePage({ data }) {
 
           <section className="section">
             <div className="container">
+              <SiteDescription />
+            </div>
+          </section>
+
+          <section className="section">
+            <div className="container">
               <div className="columns">
-                <div class="column content is-8-desktop is-offset-2-desktop is-fullwidth-mobile">
+                <div class="message is-primary column content is-8-desktop is-offset-2-desktop is-fullwidth-mobile">
                   <p>
                     {(
                       (stateData) => {
@@ -46,8 +53,11 @@ export default function StatePage({ data }) {
                   </p>
 
                   <StateEarlyVotingCountdown data={stateData}/>
-            
+                </div>
+              </div>
 
+              <div className="columns">
+                <div class="column content is-8-desktop is-offset-2-desktop is-fullwidth-mobile">
                   <h3 class="title is-3">Can you early vote in person?</h3>
                   <div>
                     {(

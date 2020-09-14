@@ -4,6 +4,10 @@
 // Importing Bulma from node_modules
 @import '~bulma/bulma.sass';
 
+.is-nowrap {
+  white-space: nowrap;
+}
+
 .gradientBg {
 	display: flex;
 	background: linear-gradient(to right, $primary-color, $secondary-color);
