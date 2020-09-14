@@ -2,7 +2,7 @@ module.exports = {
 	pathPrefix: "/",
 	siteMetadata: {
 		title: 'Vote Early!',
-		author: 'jared kofron & dean putney',
+		author: 'Early Voting Contributors',
 		imageUrl: 'src/images/share.png',
 		description: 'Get informed about early voting in your state.',
 		keywords: `Web developer, Web, Developer, CSS, HTML, JS, Javascript, Gatsby, Bulma Developer, CSS3, HTML5, Seo, Starter`,
@@ -12,6 +12,7 @@ module.exports = {
 		// gatsby: 'https://www.gatsbyjs.org/',
 		// bulma: 'https://bulma.io/',
 		voteAmerica: 'https://www.voteamerica.com/',
+		githubRepository: 'https://github.com/deanputney/earlyvoting',
 		siteUrl: 'https://earlyvoting.com'
 	},
 	plugins: [
