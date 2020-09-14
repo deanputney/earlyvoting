@@ -66,6 +66,7 @@
   			width: 100%;
   		}
   		@include mobile {
+        width: 100%;
   			border-spacing: 4px;
   		}
   		table-layout: fixed;
