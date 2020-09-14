@@ -24,7 +24,7 @@ export default function StatePage({ data }) {
                         if (canEarlyVote(stateData)) {
                           return (
                             <React.Fragment>
-                              <Link to={stateData.officialInfoEarlyVoting} class="button is-primary">
+                              <Link to={stateData.officialInfoEarlyVoting} class="button is-link">
                                 {stateData.fullStateName} Early Voting Info
                               </Link>&nbsp;
                             </React.Fragment>
