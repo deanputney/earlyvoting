@@ -55,7 +55,12 @@ export default function StatePage({ data }) {
                   <StateEarlyVotingCountdown data={stateData}/>
                 </div>
               </div>
+            </div>
+          </section>
 
+
+          <section className="section">
+            <div className="container">
               <div className="columns">
                 <div class="column content is-8-desktop is-offset-2-desktop is-fullwidth-mobile">
                   <h3 class="title is-3">Can you early vote in person?</h3>
