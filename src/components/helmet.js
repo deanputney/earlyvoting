@@ -5,7 +5,7 @@ import useSiteMetadata from '../hooks/use-site-metadata';
 import Helmet from 'react-helmet';
 import shareImage from '../images/share.png';
 
-export default () => {
+export default ({ data }) => {
 	const siteMetadata = useSiteMetadata();
 
 	return (
@@ -17,7 +17,12 @@ export default () => {
 			/>
 			<meta name="description" content={siteMetadata.description} />
 			<meta name="keywords" content={siteMetadata.keywords} />
-			<title>{siteMetadata.title}</title>
+			<title>{( () => {
+				if (data && data.fullStateName) {
+					return `Early Voting Information for ${data.fullStateName}`;
+				}
+				return siteMetadata.title;
+			})()}</title>
 			<html lang="en" />
 			{/* Google / Search Engine Meta Tags */}
 			<meta itemprop="name" content={siteMetadata.author} />

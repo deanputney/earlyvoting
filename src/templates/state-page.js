@@ -17,7 +17,7 @@ export default function StatePage({ data }) {
     const stateData = data.googleSheetEarlyVotingDataRow
       return (
         <div>
-          <Helmet />
+          <Helmet data={stateData} />
           <StateHeader stateData={stateData} />
 
           <section className="section">
