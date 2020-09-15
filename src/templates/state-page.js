@@ -22,7 +22,23 @@ export default function StatePage({ data }) {
 
           <section className="section">
             <div className="container">
-              <SiteDescription />
+              {( (stateData) => {
+                if (canEarlyVote(stateData)) {
+                  return (
+                    <SiteDescription />
+                  );
+                }
+                return (
+                  <div class="columns">
+                    <div class="column content is-8-desktop is-offset-2-desktop is-fullwidth-mobile">
+                      <p>Unfortunately, it is not possible to vote in advance in {stateData.fullStateName}.
+                      While this site is focused on helping people get their vote in before the
+                      general election, here is some general information on voting that may be
+                      helpful.</p>
+                    </div>
+                  </div>
+                );
+              })(stateData)}
             </div>
           </section>
 
@@ -30,56 +46,85 @@ export default function StatePage({ data }) {
             <div className="container">
               <div className="columns">
                 <div class="message is-primary column content is-8-desktop is-offset-2-desktop is-fullwidth-mobile">
-                  <p>
-                    {(
-                      (stateData) => {
-                        if (canEarlyVote(stateData)) {
-                          return (
-                            <React.Fragment>
-                              <Link to={stateData.officialInfoEarlyVoting} class="button is-link">
-                                {stateData.fullStateName} Early Voting Info
-                              </Link>&nbsp;
-                            </React.Fragment>
-                          );
-                        }
-                      }
-                    )(stateData)}
-                    <Link to={stateData.sosElectionWebsite} class="button">
-                      {stateData.fullStateName} Election Website
-                    </Link>&nbsp;
-                    <Link to={stateData.year2020OfficialElectionCalendar} class="button">
-                      {stateData.fullStateName} Election Calendar
-                    </Link>&nbsp;
-                  </p>
+                  {( (stateData) => {
+                    if (canEarlyVote(stateData)) {
+                      return (
+                        <StateEarlyVotingCountdown data={stateData}/>
+                      );
+                    }
+                  })(stateData)}
 
-                  <StateEarlyVotingCountdown data={stateData}/>
+                  <div className="columns is-centered">
+                    <div className="column is-narrow">
+                      {(
+                        (stateData) => {
+                          if (canEarlyVote(stateData)) {
+                            return (
+                              <React.Fragment>
+                                <Link to={stateData.officialInfoEarlyVoting} target="_blank"
+                                  class="button is-link">
+                                  {stateData.fullStateName} Early Voting Info
+                                </Link>
+                              </React.Fragment>
+                            );
+                          }
+                        }
+                      )(stateData)}
+                    </div>
+                    <div className="column is-narrow">
+                      <Link to={stateData.sosElectionWebsite} target="_blank"
+                        class="button">
+                        {stateData.fullStateName} Election Website
+                      </Link>
+                    </div>
+                    <div className="column is-narrow">
+                      <Link to={stateData.year2020OfficialElectionCalendar} target="_blank"
+                        class="button">
+                        {stateData.fullStateName} Election Calendar
+                      </Link>
+                    </div>
+                  </div>
                 </div>
               </div>
+            </div>
+          </section>
 
+
+          <section className="section">
+            <div className="container">
               <div className="columns">
                 <div class="column content is-8-desktop is-offset-2-desktop is-fullwidth-mobile">
                   <h3 class="title is-3">Can you early vote in person?</h3>
-                  <div>
-                    {(
-                      (stateData) => {
+                  {(
+                    (stateData) => {
+                      if (canEarlyVote(stateData)) {
                         if (hasInPersonEarlyVotingInfo(stateData)) {
                           return stateData.earlyVotingInPersonInfoManual
                         }
                         else {
                           return (
-                            <React.Fragment>
-                              Check the <Link to={stateData.officialInfoVbm}>
+                            <div class="subtitle is-5">
+                              Here's the <Link to={stateData.officialInfoEarlyVoting} target="_blank">
                                 official early voting info for {stateData.fullStateName}.
                                              </Link>
-                            </React.Fragment>
+                            </div>
                           )
                         }
                       }
-                    )(stateData)}
-                  </div>
+                      return (
+                        <React.Fragment>
+                          <div class="subtitle is-5">
+                            No. {stateData.fullStateName} does not have early in-person voting.
+                          </div>
+                        </React.Fragment>
+                      )
+                    }
+                  )(stateData)}
+                  <p></p>
+
                   <h3 class="title is-3">Can you early vote by mail?</h3>
-                  <div class="subtitle is-5">Check the&nbsp;
-                    <Link to={stateData.officialInfoVbm}>
+                  <div class="subtitle is-5">Here's the&nbsp;
+                    <Link to={stateData.officialInfoVbm} target="_blank">
                       official vote by mail info for {stateData.fullStateName}.
                     </Link>
                   </div>

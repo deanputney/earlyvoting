@@ -16,11 +16,15 @@ const numDaysToStart = (startDate) => {
 }
 
 
-const messageForCountdown = (numDaysToStart, startDateString) => {
+const messageForCountdown = (fullStateName, numDaysToStart, startDateString) => {
     if (numDaysToStart <= 0) {
-        return "Early voting has started in your state!";
+        return `Early voting has started in ${fullStateName}!`;
     }
-    return "Early voting in your state begins in " + numDaysToStart + " days on " + startDateString + ".";
+    return (
+      <React.Fragment>
+        Early voting in {fullStateName} begins in {numDaysToStart} days on <span class="is-nowrap">{startDateString}</span>.
+      </React.Fragment>
+    );
 }
 
 
@@ -34,8 +38,8 @@ const StateEarlyVotingCountdown = (data) => {
 
   return (
     <React.Fragment>
-    <p>{messageForCountdown(daysLeft, startDateString)}</p>
-    <p>You have until {endDateString} to vote before election day.</p>
+    <p className="title is-4 has-text-centered">{messageForCountdown(data.fullStateName, daysLeft, startDateString)}</p>
+    <p className="subtitle is-5 has-text-centered">You have until {endDateString} to vote before election day.</p>
     </React.Fragment>
   )
 };
