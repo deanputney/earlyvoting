@@ -8,6 +8,20 @@ import shareImage from '../images/share.png';
 export default ({ data }) => {
 	const siteMetadata = useSiteMetadata();
 
+	const sharingTitle = () =>{
+		if (data && data.fullStateName) {
+			return `How to vote early in ${data.fullStateName}`;
+		}
+		return 'How to vote early in your state';
+	}
+
+	const sharingDescription = () =>{
+		if (data && data.fullStateName) {
+			return `Get informed about early voting in ${data.fullStateName}`;
+		}
+		return 'Get informed about early voting in your state.';
+	}
+
 	return (
 		<Helmet>
 			<link rel="icon" href={favicon}/>
@@ -32,13 +46,13 @@ export default ({ data }) => {
 			/>
 			<meta itemprop="image" content={`${siteMetadata.siteUrl}${shareImage}`} />
 
-			<meta property="og:title" content="How to vote early in your state" />
+			<meta property="og:title" content={sharingTitle()} />
 			<meta property="og:image" content={`${siteMetadata.siteUrl}${shareImage}`} />
-			<meta property="og:description" content={siteMetadata.description} />
+			<meta property="og:description" content={sharingDescription()} />
 
 			<meta name="twitter:card" content="summary_large_image" />
 			<meta name="twitter:site" content="@earlyvoting" />
-			<meta name="twitter:title" content="How to vote early in your state" />
+			<meta name="twitter:title" content={sharingTitle()} />
 			<meta name="twitter:description" content="Let's get this over with!" />
 			<meta name="twitter:image" content={`${siteMetadata.siteUrl}${shareImage}`} />
 		</Helmet>
