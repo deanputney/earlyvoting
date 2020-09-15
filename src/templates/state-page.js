@@ -22,7 +22,23 @@ export default function StatePage({ data }) {
 
           <section className="section">
             <div className="container">
-              <SiteDescription />
+              {( (stateData) => {
+                if (canEarlyVote(stateData)) {
+                  return (
+                    <SiteDescription />
+                  );
+                }
+                return (
+                  <div class="columns">
+                    <div class="column content is-8-desktop is-offset-2-desktop is-fullwidth-mobile">
+                      <p>Unfortunately, it is not possible to vote in advance in {stateData.fullStateName}.
+                      While this site is focused on helping people get their vote in before the
+                      general election, here is some general information on voting that may be
+                      helpful.</p>
+                    </div>
+                  </div>
+                );
+              })(stateData)}
             </div>
           </section>
 
@@ -30,7 +46,13 @@ export default function StatePage({ data }) {
             <div className="container">
               <div className="columns">
                 <div class="message is-primary column content is-8-desktop is-offset-2-desktop is-fullwidth-mobile">
-                  <StateEarlyVotingCountdown data={stateData}/>
+                  {( (stateData) => {
+                    if (canEarlyVote(stateData)) {
+                      return (
+                        <StateEarlyVotingCountdown data={stateData}/>
+                      );
+                    }
+                  })(stateData)}
 
                   <div className="columns is-centered">
                     <div className="column is-narrow">
@@ -75,18 +97,27 @@ export default function StatePage({ data }) {
                   <h3 class="title is-3">Can you early vote in person?</h3>
                   {(
                     (stateData) => {
-                      if (hasInPersonEarlyVotingInfo(stateData)) {
-                        return stateData.earlyVotingInPersonInfoManual
+                      if (canEarlyVote(stateData)) {
+                        if (hasInPersonEarlyVotingInfo(stateData)) {
+                          return stateData.earlyVotingInPersonInfoManual
+                        }
+                        else {
+                          return (
+                            <div class="subtitle is-5">
+                              Here's the <Link to={stateData.officialInfoEarlyVoting} target="_blank">
+                                official early voting info for {stateData.fullStateName}.
+                                             </Link>
+                            </div>
+                          )
+                        }
                       }
-                      else {
-                        return (
+                      return (
+                        <React.Fragment>
                           <div class="subtitle is-5">
-                            Here's the <Link to={stateData.officialInfoVbm} target="_blank">
-                              official early voting info for {stateData.fullStateName}.
-                                           </Link>
+                            No. {stateData.fullStateName} does not have early in-person voting.
                           </div>
-                        )
-                      }
+                        </React.Fragment>
+                      )
                     }
                   )(stateData)}
                   <p></p>
