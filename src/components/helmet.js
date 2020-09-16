@@ -3,23 +3,29 @@ import { withPrefix } from 'gatsby';
 import favicon from '../images/vbm-logo-small.svg'
 import useSiteMetadata from '../hooks/use-site-metadata';
 import Helmet from 'react-helmet';
-import shareImage from '../images/share.png';
 
 export default ({ data }) => {
 	const siteMetadata = useSiteMetadata();
 
-	const sharingTitle = () =>{
+	const sharingTitle = () => {
 		if (data && data.fullStateName) {
 			return `How to vote early in ${data.fullStateName}`;
 		}
 		return 'How to vote early in your state';
 	}
 
-	const sharingDescription = () =>{
+	const sharingDescription = () => {
 		if (data && data.fullStateName) {
 			return `Get informed about early voting in ${data.fullStateName}`;
 		}
 		return 'Get informed about early voting in your state.';
+	}
+
+	const sharingImage = () => {
+		if (data && data.fullStateName) {
+			return `/share-images/states/${data.stateSlug}.png`;
+		}
+		return '/share-images/share.png';
 	}
 
 	return (
@@ -44,17 +50,17 @@ export default ({ data }) => {
 				itemprop="description"
 				content={siteMetadata.description}
 			/>
-			<meta itemprop="image" content={`${siteMetadata.siteUrl}${shareImage}`} />
+			<meta itemprop="image" content={`${siteMetadata.siteUrl}${sharingImage()}`} />
 
 			<meta property="og:title" content={sharingTitle()} />
-			<meta property="og:image" content={`${siteMetadata.siteUrl}${shareImage}`} />
+			<meta property="og:image" content={`${siteMetadata.siteUrl}${sharingImage()}`} />
 			<meta property="og:description" content={sharingDescription()} />
 
 			<meta name="twitter:card" content="summary_large_image" />
 			<meta name="twitter:site" content="@earlyvoting" />
 			<meta name="twitter:title" content={sharingTitle()} />
 			<meta name="twitter:description" content="Let's get this over with!" />
-			<meta name="twitter:image" content={`${siteMetadata.siteUrl}${shareImage}`} />
+			<meta name="twitter:image" content={`${siteMetadata.siteUrl}${sharingImage()}`} />
 		</Helmet>
 	)
 };
