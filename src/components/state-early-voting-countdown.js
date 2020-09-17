@@ -12,7 +12,8 @@ const dateFromString = (startDateString) => {
 
 
 const numDaysToStart = (startDate) => {
-    return startDate.diff(moment(), 'days');
+  var todaysDate = moment(moment().format('MMMM DD, YYYY'));
+  return startDate.diff(todaysDate, 'days');
 }
 
 
