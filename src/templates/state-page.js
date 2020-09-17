@@ -8,6 +8,7 @@ import StateHeader from '../components/state/header';
 import FormattedBlock from '../components/formatters/formatted-block';
 import StateEarlyVotingCountdown from '../components/state-early-voting-countdown';
 import canEarlyVote from '../hooks/state-data';
+import Footer from '../components/footer';
 
 const hasInPersonEarlyVotingInfo = (stateData) => {
   return (stateData.earlyVotingInPersonInfoCombined !== null)
@@ -169,6 +170,8 @@ export default function StatePage({ data }) {
               </div>
             </div>
           </section>
+
+          <Footer />
         </div>
       )
 }
