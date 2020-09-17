@@ -12,7 +12,7 @@ const dateFromString = (startDateString) => {
 
 
 const numDaysToStart = (startDate) => {
-    return startDate.diff(moment(), 'days');
+    return startDate.diff(moment({hours: 0}), 'days');
 }
 
 
