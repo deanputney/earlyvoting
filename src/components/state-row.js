@@ -21,7 +21,7 @@ const StateRow = (data) => {
   var endDate = parseDate(data.earlyVotingEndDate)
   var startDate = parseDate(data.earlyVotingStartDate)
 
-  data.shortStartDate = (startDate.month() + 1) + '/' + (startDate.date() + 1)
+  data.shortStartDate = (startDate.month() + 1) + '/' + startDate.date()
 
   const daysToVote = dateDiffInDays(startDate, endDate)
 
