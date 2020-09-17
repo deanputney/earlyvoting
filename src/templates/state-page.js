@@ -185,7 +185,7 @@ export const query = graphql`
       earlyVotingStarts
       earlyVotingEnds
       year2020EarlyVotingStartsCombined
-      year2020EarlyVotingEnds
+      year2020EarlyVotingEndsCombined
       earlyVotingNotesCombined
       officialInfoEarlyVotingCombined
       year2020OfficialElectionCalendar

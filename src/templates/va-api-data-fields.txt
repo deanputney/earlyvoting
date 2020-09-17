@@ -29,7 +29,6 @@ year2020OfficialElectionCalendar
 officialInfoEarlyVoting
 officialInfoVoterId
 year2020EarlyVotingStarts
-year2020EarlyVotingStartsCombined
 sdrNotes
 registrationNvrfSubmissionAddress
 pollsOpen

@@ -31,7 +31,7 @@ const messageForCountdown = (fullStateName, numDaysToStart, startDateString) => 
 const StateEarlyVotingCountdown = (data) => {
   data = data.data
 
-  var endDateString = data.year2020EarlyVotingEnds;
+  var endDateString = data.year2020EarlyVotingEndsCombined;
   var startDateString = data.year2020EarlyVotingStartsCombined;
   var startDate = dateFromString(startDateString);
   var daysLeft = numDaysToStart(startDate);
