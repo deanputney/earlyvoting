@@ -33,7 +33,7 @@ const StateCanEarlyVote = ({ stateData }) => (
     <h1 className="is-uppercase is-size-1 has-text-white">
       You can vote early in {stateData.fullStateName}.
     </h1>
-    <p className="subtitle has-text-white is-size-3">
+    <p className="subtitle has-text-white is-3-desktop is-4-mobile">
       Get the official info here:&nbsp;
       <Link to={stateData.officialInfoEarlyVoting} target="_blank" class="hilight">
         {stateData.fullStateName} Early Voting Info
