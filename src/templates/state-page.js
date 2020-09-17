@@ -116,7 +116,7 @@ export default function StatePage({ data }) {
 
                   {(
                     (stateData) => {
-                      if (hasInPersonEarlyVotingInfo(stateData)) {
+                      if (canEarlyVote(stateData) && hasInPersonEarlyVotingInfo(stateData)) {
                         return (
                           <FormattedBlock text={stateData.earlyVotingInPersonInfoCombined} />
                         )
