@@ -7,7 +7,7 @@ import {todaysDate, parseDate, dateDiffInDays} from '../lib/dates';
 
 const electionDate = parseDate('2020-11-03')
 let quips = {
-  42: 'You could probably read all the Harry Potters if you saved this much time.',
+  42: 'You could do a Couch to 5K if you saved this much time.',
   30: 'Voting now would save you a whole month.',
   20: 'This is three whole weekends off.',
   14: 'Two weeks of bliss.',
