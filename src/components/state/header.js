@@ -30,7 +30,7 @@ const StateHeader = ({ stateData }) => (
 
 const StateCanEarlyVote = ({ stateData }) => (
   <div className="content">
-    <h1 className="is-uppercase is-size-1 has-text-white">
+    <h1 className="is-uppercase is-1-desktop is-2-mobile has-text-white">
       You can vote early in {stateData.fullStateName}.
     </h1>
     <p className="subtitle has-text-white is-3-desktop is-4-mobile">
