@@ -95,27 +95,33 @@ export default function StatePage({ data }) {
               <div className="columns">
                 <div class="column content is-8-desktop is-offset-2-desktop is-fullwidth-mobile">
                   <h3 class="title is-3">Can you early vote in person?</h3>
-                  <div class="subtitle is-5">
-                              Here's the <Link to={stateData.officialInfoEarlyVoting} target="_blank">
-                                official early voting info for {stateData.fullStateName}.
-                                             </Link>
-                            </div>
                   {(
                     (stateData) => {
                       if (canEarlyVote(stateData)) {
-                        if (hasInPersonEarlyVotingInfo(stateData)) {
-                          return (
-                            <FormattedBlock text={stateData.earlyVotingByMailInfoCombined} />
-                          )
-                        }
+                        return (
+                          <div class="subtitle is-5">
+                            Here's the <Link to={stateData.officialInfoEarlyVoting} target="_blank">
+                              official early voting info for {stateData.fullStateName}.
+                                           </Link>
+                          </div>
+                        );
                       }
                       return (
-                        <React.Fragment>
-                          <div class="subtitle is-5">
-                            No. {stateData.fullStateName} does not have early in-person voting.
-                          </div>
-                        </React.Fragment>
-                      )
+                        <div class="subtitle is-5">
+                          No. {stateData.fullStateName} does not have early in-person voting.
+                        </div>
+                      );
+                    }
+                  )(stateData)}
+
+                  {(
+                    (stateData) => {
+                      if (hasInPersonEarlyVotingInfo(stateData)) {
+                        return (
+                          <FormattedBlock text={stateData.earlyVotingInPersonInfoCombined} />
+                        )
+                      }
+                      return;
                     }
                   )(stateData)}
                   <p></p>
