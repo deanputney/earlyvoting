@@ -1,6 +1,6 @@
 import React from 'react';
 import { withPrefix } from 'gatsby';
-import favicon from '../images/vbm-logo-small.svg'
+import favicon from '../images/checkmark-logo-small.svg'
 import useSiteMetadata from '../hooks/use-site-metadata';
 import Helmet from 'react-helmet';
 
