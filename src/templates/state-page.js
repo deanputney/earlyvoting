@@ -10,7 +10,7 @@ import StateEarlyVotingCountdown from '../components/state-early-voting-countdow
 import canEarlyVote from '../hooks/state-data';
 
 const hasInPersonEarlyVotingInfo = (stateData) => {
-  return (stateData.earlyVotingInPersonInfoManual !== null)
+  return (stateData.earlyVotingInPersonInfoCombined !== null)
 }
 
 export default function StatePage({ data }) {
@@ -99,7 +99,16 @@ export default function StatePage({ data }) {
                     (stateData) => {
                       if (canEarlyVote(stateData)) {
                         if (hasInPersonEarlyVotingInfo(stateData)) {
-                          return stateData.earlyVotingInPersonInfoManual
+                          return (
+                            <React.Fragment>
+                            <div class="subtitle is-5">
+                              Here's the <Link to={stateData.officialInfoEarlyVoting} target="_blank">
+                                official early voting info for {stateData.fullStateName}.
+                                             </Link>
+                            </div>
+                            <FormattedBlock text={stateData.earlyVotingByMailInfoCombined} />
+                            </React.Fragment>
+                          )
                         }
                         else {
                           return (
@@ -131,7 +140,7 @@ export default function StatePage({ data }) {
 
                   <FormattedBlock text={stateData.vbmAbsenteeBallotRules} />
 
-                  <FormattedBlock text={stateData.earlyVotingNotesCombined} />
+                  <FormattedBlock text={stateData.earlyVotingByMailInfoCombined} />
 
 
 
@@ -193,7 +202,8 @@ export const query = graphql`
       idRequirementsSdr
       registrationRules
       externalToolVerifyStatus
-      earlyVotingInPersonInfoManual
+      earlyVotingInPersonInfoCombined
+      earlyVotingByMailInfoCombined
     }
   }
 `
