@@ -35,7 +35,7 @@ const StateCanEarlyVote = ({ stateData }) => (
     </h1>
     <p className="subtitle has-text-white is-size-3-desktop is-size-4-mobile">
       Get the official info here:&nbsp;
-      <Link to={stateData.officialInfoEarlyVoting} target="_blank" class="hilight">
+      <Link to={stateData.officialInfoEarlyVotingCombined} target="_blank" class="hilight">
         {stateData.fullStateName} Early Voting Info
       </Link>
     </p>

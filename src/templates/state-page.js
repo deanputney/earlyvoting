@@ -62,7 +62,7 @@ export default function StatePage({ data }) {
                           if (canEarlyVote(stateData)) {
                             return (
                               <React.Fragment>
-                                <Link to={stateData.officialInfoEarlyVoting} target="_blank"
+                                <Link to={stateData.officialInfoEarlyVotingCombined} target="_blank"
                                   class="button is-link">
                                   {stateData.fullStateName} Early Voting Info
                                 </Link>
@@ -101,7 +101,7 @@ export default function StatePage({ data }) {
                       if (canEarlyVote(stateData)) {
                         return (
                           <div class="subtitle is-5">
-                            Here's the <Link to={stateData.officialInfoEarlyVoting} target="_blank">
+                            Here's the <Link to={stateData.officialInfoEarlyVotingCombined} target="_blank">
                               official early voting info for {stateData.fullStateName}.
                                            </Link>
                           </div>
@@ -184,11 +184,10 @@ export const query = graphql`
       fullStateName
       earlyVotingStarts
       earlyVotingEnds
-      year2020EarlyVotingStarts
-      year2020EarlyVotingEnds
-      earlyVotingNotes
+      year2020EarlyVotingStartsCombined
+      year2020EarlyVotingEndsCombined
       earlyVotingNotesCombined
-      officialInfoEarlyVoting
+      officialInfoEarlyVotingCombined
       year2020OfficialElectionCalendar
       officialInfoVoterId
       year2020VbmRequestDeadlineByMail
