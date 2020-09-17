@@ -184,7 +184,7 @@ export const query = graphql`
       fullStateName
       earlyVotingStarts
       earlyVotingEnds
-      year2020EarlyVotingStarts
+      year2020EarlyVotingStartsCombined
       year2020EarlyVotingEnds
       earlyVotingNotesCombined
       officialInfoEarlyVotingCombined

@@ -32,7 +32,7 @@ const StateEarlyVotingCountdown = (data) => {
   data = data.data
 
   var endDateString = data.year2020EarlyVotingEnds;
-  var startDateString = data.year2020EarlyVotingStarts;
+  var startDateString = data.year2020EarlyVotingStartsCombined;
   var startDate = dateFromString(startDateString);
   var daysLeft = numDaysToStart(startDate);
 
