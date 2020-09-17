@@ -95,7 +95,7 @@ export default function StatePage({ data }) {
             <div className="container">
               <div className="columns">
                 <div class="column content is-8-desktop is-offset-2-desktop is-fullwidth-mobile">
-                  <h3 class="title is-3-desktop is-4-mobile">Can you early vote in person?</h3>
+                  <h3 class="title is-size-3-desktop is-size-4-mobile">Can you early vote in person?</h3>
                   {(
                     (stateData) => {
                       if (canEarlyVote(stateData)) {
@@ -127,7 +127,7 @@ export default function StatePage({ data }) {
                   )(stateData)}
                   <p></p>
 
-                  <h3 class="title is-3-desktop is-4-mobile">Can you early vote by mail?</h3>
+                  <h3 class="title is-size-3-desktop is-size-4-mobile">Can you early vote by mail?</h3>
                   <div class="subtitle is-5">Here's the&nbsp;
                     <Link to={stateData.officialInfoVbm} target="_blank">
                       official vote by mail info for {stateData.fullStateName}.
@@ -140,7 +140,7 @@ export default function StatePage({ data }) {
 
 
 
-                  <h3 class="title is-3-desktop is-4-mobile">What about on election day?</h3>
+                  <h3 class="title is-size-3-desktop is-size-4-mobile">What about on election day?</h3>
 
                   <h5>ID requirements</h5>
 
@@ -148,7 +148,7 @@ export default function StatePage({ data }) {
 
 
 
-                  <h3 class="title is-3-desktop is-4-mobile">How do I make sure I'm registered to vote?</h3>
+                  <h3 class="title is-size-3-desktop is-size-4-mobile">How do I make sure I'm registered to vote?</h3>
                   <div class="subtitle is-5">Check that <Link to={stateData.externalToolVerifyStatus}>
                       you're registered to vote.
                     </Link>
