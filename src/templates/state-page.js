@@ -10,7 +10,7 @@ import StateEarlyVotingCountdown from '../components/state-early-voting-countdow
 import canEarlyVote from '../hooks/state-data';
 
 const hasInPersonEarlyVotingInfo = (stateData) => {
-  return (stateData.earlyVotingInPersonInfoManual !== null)
+  return (stateData.earlyVotingInPersonInfoCombined !== null)
 }
 
 export default function StatePage({ data }) {
@@ -98,26 +98,30 @@ export default function StatePage({ data }) {
                   {(
                     (stateData) => {
                       if (canEarlyVote(stateData)) {
-                        if (hasInPersonEarlyVotingInfo(stateData)) {
-                          return stateData.earlyVotingInPersonInfoManual
-                        }
-                        else {
-                          return (
-                            <div class="subtitle is-5">
-                              Here's the <Link to={stateData.officialInfoEarlyVoting} target="_blank">
-                                official early voting info for {stateData.fullStateName}.
-                                             </Link>
-                            </div>
-                          )
-                        }
+                        return (
+                          <div class="subtitle is-5">
+                            Here's the <Link to={stateData.officialInfoEarlyVoting} target="_blank">
+                              official early voting info for {stateData.fullStateName}.
+                                           </Link>
+                          </div>
+                        );
                       }
                       return (
-                        <React.Fragment>
-                          <div class="subtitle is-5">
-                            No. {stateData.fullStateName} does not have early in-person voting.
-                          </div>
-                        </React.Fragment>
-                      )
+                        <div class="subtitle is-5">
+                          No. {stateData.fullStateName} does not have early in-person voting.
+                        </div>
+                      );
+                    }
+                  )(stateData)}
+
+                  {(
+                    (stateData) => {
+                      if (canEarlyVote(stateData) && hasInPersonEarlyVotingInfo(stateData)) {
+                        return (
+                          <FormattedBlock text={stateData.earlyVotingInPersonInfoCombined} />
+                        )
+                      }
+                      return;
                     }
                   )(stateData)}
                   <p></p>
@@ -131,7 +135,7 @@ export default function StatePage({ data }) {
 
                   <FormattedBlock text={stateData.vbmAbsenteeBallotRules} />
 
-                  <FormattedBlock text={stateData.earlyVotingNotesCombined} />
+                  <FormattedBlock text={stateData.earlyVotingByMailInfoCombined} />
 
 
 
@@ -193,7 +197,8 @@ export const query = graphql`
       idRequirementsSdr
       registrationRules
       externalToolVerifyStatus
-      earlyVotingInPersonInfoManual
+      earlyVotingInPersonInfoCombined
+      earlyVotingByMailInfoCombined
     }
   }
 `
