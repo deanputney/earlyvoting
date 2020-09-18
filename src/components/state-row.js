@@ -16,10 +16,10 @@ const StateRow = (data) => {
     return null
   }
 
-  var statePage = statePageUri(data.state);
+  var statePage = statePageUri(data.fullStateName);
 
-  var endDate = parseDate(data.earlyVotingEndDate)
-  var startDate = parseDate(data.earlyVotingStartDate)
+  var endDate = parseDate(data.year2020EarlyVotingEndsCombined)
+  var startDate = parseDate(data.year2020EarlyVotingStartsCombined)
 
   data.shortStartDate = (startDate.month() + 1) + '/' + startDate.date()
 
@@ -36,7 +36,7 @@ const StateRow = (data) => {
   if (data.daysToVote < 3) {
     return (
       <tr>
-        <th><Link to={statePage}>{data.state}</Link></th>
+        <th><Link to={statePage}>{data.fullStateName}</Link></th>
         <td colspan={data.daysToStart} class="bar-spacer">{data.shortStartDate}</td>
         <td colspan={daysToVote} class="bar">
           <Link to={statePage}>
@@ -51,7 +51,7 @@ const StateRow = (data) => {
 
   return (
     <tr>
-      <th><Link to={statePage}>{data.state}</Link></th>
+      <th><Link to={statePage}>{data.fullStateName}</Link></th>
       <td colspan={data.daysToStart} class="bar-spacer">
         <span class={(
           () => {
