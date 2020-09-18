@@ -16,7 +16,7 @@ let quips = {
 let usedQuips = []
 
 function layoutStateRows(stateData) {
-  const startDate = parseDate(stateData.earlyVotingStartDate)
+  const startDate = parseDate(stateData.year2020EarlyVotingStartsCombined)
   const chartStartDate = parseDate('2020-09-17')
   const days = dateDiffInDays(startDate, electionDate)
   stateData.daysToStart = dateDiffInDays(chartStartDate, startDate)
@@ -43,12 +43,12 @@ const StateGantt = () => (
   <StaticQuery
   query={graphql`
     {
-      allGoogleSheetSiteDatesRow {
+      allGoogleSheetEarlyVotingDataRow {
         nodes {
-          state
+          year2020EarlyVotingStartsCombined
+          year2020EarlyVotingEndsCombined
+          fullStateName
           daysToVote
-          earlyVotingStartDate
-          earlyVotingEndDate
         }
       }
     }
@@ -65,7 +65,7 @@ const StateGantt = () => (
             <td class="bars" colspan="46">
               <table class="is-fullwidth is-fullwidth-mobile">
                 {
-                  data.allGoogleSheetSiteDatesRow.nodes.map(layoutStateRows)
+                  data.allGoogleSheetEarlyVotingDataRow.nodes.map(layoutStateRows)
                 }
               </table>
             </td>
