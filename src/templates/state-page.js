@@ -14,6 +14,10 @@ const hasInPersonEarlyVotingInfo = (stateData) => {
   return (stateData.earlyVotingInPersonInfoCombined !== null)
 }
 
+const canRegisterOnline = (stateData) => {
+  return (stateData.idRequirementsOvr !== "N/A")
+}
+
 export default function StatePage({ data }) {
     const stateData = data.googleSheetEarlyVotingDataRow
       return (
@@ -157,15 +161,25 @@ export default function StatePage({ data }) {
                   <FormattedBlock text={stateData.registrationRules}/>
                   <br/>
 
-
                   <h4 class="subtitle is-4">Can I register online?</h4>
-
-                  <p>{stateData.idRequirementsOvr}</p>
-
-                  <p>
-                    <Link to={stateData.externalToolOvr} class="button">Register to vote online here</Link>
-                  </p>
-
+                  {(
+                    (stateData) => {
+                      if (canRegisterOnline(stateData)) {
+                        return (
+                          <React.Fragment>
+                            <FormattedBlock text={stateData.idRequirementsOvr}/>
+                            <Link to={stateData.externalToolOvr} class="button">Register to vote online here</Link>
+                          </React.Fragment>
+                        )
+                      }
+                      else {
+                        return (
+                          <p>Unfortunately online registration is not possible in {stateData.fullStateName}.</p>
+                        )
+                      }
+                      return;
+                    }
+                  )(stateData)}
                 </div>
               </div>
             </div>
