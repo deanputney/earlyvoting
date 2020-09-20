@@ -201,6 +201,7 @@ export const query = graphql`
       externalToolVerifyStatus
       earlyVotingInPersonInfoCombined
       earlyVotingByMailInfoCombined
+      sosElectionWebsite
     }
   }
 `
