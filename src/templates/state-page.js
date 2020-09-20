@@ -1,6 +1,7 @@
 import React from "react"
 import '../components/style.scss';
 import { graphql, Link } from 'gatsby';
+import { shortStateName } from '../lib/common';
 
 import Helmet from '../components/helmet';
 import SiteDescription from '../components/site-description';
@@ -68,7 +69,7 @@ export default function StatePage({ data }) {
                               <React.Fragment>
                                 <Link to={stateData.officialInfoEarlyVotingCombined} target="_blank"
                                   class="button is-link">
-                                  {stateData.fullStateName} Early Voting Info
+                                  {shortStateName(stateData.fullStateName)} Early Voting Info
                                 </Link>
                               </React.Fragment>
                             );
@@ -79,13 +80,13 @@ export default function StatePage({ data }) {
                     <div className="column is-narrow">
                       <Link to={stateData.sosElectionWebsite} target="_blank"
                         class="button">
-                        {stateData.fullStateName} Election Website
+                        {shortStateName(stateData.fullStateName)} Election Website
                       </Link>
                     </div>
                     <div className="column is-narrow">
                       <Link to={stateData.year2020OfficialElectionCalendar} target="_blank"
                         class="button">
-                        {stateData.fullStateName} Election Calendar
+                        {shortStateName(stateData.fullStateName)} Election Calendar
                       </Link>
                     </div>
                   </div>
