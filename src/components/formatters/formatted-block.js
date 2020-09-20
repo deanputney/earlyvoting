@@ -22,6 +22,12 @@ const maybeBulletedText = (text) => {
 }
 
 const FormattedBlock = ({ text }) => {
+    if (Array.isArray(text)) {
+        return <ReactMarkdown source={text.reduce(
+            (acc, block) => acc + block + '  \n\n',
+            ''
+        )}/>
+    }
     return <ReactMarkdown source={text} />
 };
 

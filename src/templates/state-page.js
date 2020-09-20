@@ -138,10 +138,7 @@ export default function StatePage({ data }) {
                     </Link>
                   </div>
 
-                  <FormattedBlock text={stateData.vbmAbsenteeBallotRules} />
-
-                  <FormattedBlock text={stateData.earlyVotingByMailInfoCombined} />
-
+                  <FormattedBlock text={[stateData.vbmAbsenteeBallotRules, stateData.earlyVotingByMailInfoCombined]} />
 
 
                   <h3 class="title is-size-3-desktop is-size-4-mobile">What about on election day?</h3>
