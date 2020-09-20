@@ -138,7 +138,7 @@ export default function StatePage({ data }) {
                     </Link>
                   </div>
 
-                  <FormattedBlock text={[stateData.vbmAbsenteeBallotRules, stateData.earlyVotingByMailInfoCombined]} />
+                  <FormattedBlock text={[stateData.vbmAbsenteeBallotRulesCombined, stateData.earlyVotingByMailInfoCombined]} />
 
 
                   <h3 class="title is-size-3-desktop is-size-4-mobile">What about on election day?</h3>
@@ -203,7 +203,7 @@ export const query = graphql`
       officialInfoVoterId
       year2020VbmRequestDeadlineByMail
       officialInfoVbm
-      vbmAbsenteeBallotRules
+      vbmAbsenteeBallotRulesCombined
       officialInfoStudents
       externalToolOvr
       idRequirementsOvr
