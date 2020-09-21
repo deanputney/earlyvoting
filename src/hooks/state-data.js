@@ -1,6 +1,6 @@
 
 const canEarlyVote = (stateData) => {
-  if (stateData.earlyVotingStarts != 'N/A') {
+  if (stateData.year2020EarlyVotingStartsCombined != 'N/A') {
     return true;
   }
   return false;
