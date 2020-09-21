@@ -41,7 +41,7 @@ class StateSelect extends Component {
 }
 
 const stateSelectOption = (data) => {
-	var statePage = statePageUri(data.stateSlug);
+	var statePage = statePageUri(data.fullStateName);
 
 	return (
 		<option value={ statePage }>{ data.fullStateName }</option>
