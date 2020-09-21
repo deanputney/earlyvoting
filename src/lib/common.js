@@ -1,9 +1,9 @@
 const slugifyState = (stateName) => {
-    return stateName.toLowerCase().replaceAll(' ', '-');
+  return stateName.toLowerCase().replace(/ /g, '-');
 }
 
 const statePageUri = (stateName) => {
-    return '/' + slugifyState(stateName);
+  return '/' + slugifyState(stateName);
 }
 
 const shortStateName = (fullStateName) => {
