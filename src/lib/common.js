@@ -7,7 +7,7 @@ const statePageUri = (stateName) => {
 }
 
 const shortStateName = (fullStateName) => {
-  switch (fullStateName) {
+  switch (fullStateName.trim()) {
     case 'District of Columbia':
       return 'Washington DC';
     default:
