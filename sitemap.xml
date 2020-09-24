@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+<url> <loc>https://earlyvoting.com/pennsylvania</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://earlyvoting.com/minnesota</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://earlyvoting.com/wyoming</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://earlyvoting.com/south-dakota</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -12,13 +13,17 @@
 <url> <loc>https://earlyvoting.com/california</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://earlyvoting.com/iowa</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://earlyvoting.com/nebraska</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://earlyvoting.com/south-carolina</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://earlyvoting.com/montana</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://earlyvoting.com/indiana</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://earlyvoting.com/new-mexico</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://earlyvoting.com/ohio</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://earlyvoting.com/arizona</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://earlyvoting.com/georgia</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://earlyvoting.com/texas</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://earlyvoting.com/kentucky</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://earlyvoting.com/tennessee</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://earlyvoting.com/rhode-island</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://earlyvoting.com/north-carolina</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://earlyvoting.com/washington</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://earlyvoting.com/louisiana</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -40,16 +45,11 @@
 <url> <loc>https://earlyvoting.com/kansas</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://earlyvoting.com/oklahoma</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://earlyvoting.com/mississippi</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://earlyvoting.com/south-carolina</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://earlyvoting.com/montana</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://earlyvoting.com/rhode-island</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://earlyvoting.com/kentucky</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://earlyvoting.com/alabama</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://earlyvoting.com/connecticut</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://earlyvoting.com/delaware</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://earlyvoting.com/new-hampshire</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://earlyvoting.com/new-jersey</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://earlyvoting.com/oregon</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://earlyvoting.com/pennsylvania</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://earlyvoting.com/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 </urlset>
