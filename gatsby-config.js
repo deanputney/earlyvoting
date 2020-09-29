@@ -20,14 +20,6 @@ module.exports = {
 			resolve: 'gatsby-source-google-sheets',
 			options: {
 				spreadsheetId: '1PgRctpY7Wq_CNJLr66DvSh_LmCi6r7h2FVrwBheoF58',
-				worksheetTitle: 'site-dates',
-				credentials: require('./gatsby-sheets-creds.json')
-			}
-		},
-		{
-			resolve: 'gatsby-source-google-sheets',
-			options: {
-				spreadsheetId: '1PgRctpY7Wq_CNJLr66DvSh_LmCi6r7h2FVrwBheoF58',
 				worksheetTitle: 'va-api-data',
 				credentials: require('./gatsby-sheets-creds.json')
 			}
