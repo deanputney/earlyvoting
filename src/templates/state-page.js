@@ -15,18 +15,17 @@ import Footer from '../components/footer';
 
 
 const PollingPlaceLookup = ({stateData}) => {
-  if (stateData.pollingPlaceLookupUrl) {
-    return (
-      <React.Fragment>
-        <h5>Polling place lookup</h5>
-        <p><Link to={stateData.pollingPlaceLookupUrl} target="_blank">
-            Find your polling place on this website.
-          </Link>
-        </p>
-      </React.Fragment>
-    )
-  }
-  return (null);
+  if (stateData.pollingPlaceLookupUrl) { return (null); }
+
+  return (
+    <React.Fragment>
+      <h5>Polling place lookup</h5>
+      <p><Link to={stateData.pollingPlaceLookupUrl} target="_blank">
+          Find your polling place on this website.
+        </Link>
+      </p>
+    </React.Fragment>
+  )
 }
 
 const canRegisterOnline = (stateData) => {
@@ -51,32 +50,30 @@ const OnlineRegistration = ({stateData}) => {
 }
 
 const BallotTracking = ({stateData}) => {
-  if (stateData.ballotTrackingUrl) {
-    return (
-      <React.Fragment>
-        <h3 class="title is-size-3-desktop is-size-4-mobile">Can I track my ballot?</h3>
-        <div class="subtitle is-5"><Link to={stateData.ballotTrackingUrl}>
-            Track your ballot online.
-          </Link>
-        </div>
-        <p/>
-      </React.Fragment>
-    )
-  }
-  return (null);
+  if (!stateData.ballotTrackingUrl) { return (null); }
+
+  return (
+    <React.Fragment>
+      <h3 class="title is-size-3-desktop is-size-4-mobile">Can I track my ballot?</h3>
+      <div class="subtitle is-5"><Link to={stateData.ballotTrackingUrl}>
+          Track your ballot online.
+        </Link>
+      </div>
+      <p/>
+    </React.Fragment>
+  )
 }
 
 const NewsItems = ({stateData}) => {
-  if (stateData.newsItemsMd) {
-    return (
-      <React.Fragment>
-        <h3 class="title is-size-3-desktop is-size-4-mobile">Voting News and Resources</h3>
+  if (!stateData.newsItemsMd) { return (null); }
 
-        <FormattedBlock text={stateData.newsItemsMd} />
-      </React.Fragment>
-    )
-  }
-  return (null);
+  return (
+    <React.Fragment>
+      <h3 class="title is-size-3-desktop is-size-4-mobile">Voting News and Resources</h3>
+
+      <FormattedBlock text={stateData.newsItemsMd} />
+    </React.Fragment>
+  )
 }
 
 export default function StatePage({ data }) {

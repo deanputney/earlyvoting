@@ -24,12 +24,11 @@ const Subtitle = ({stateData}) => {
 }
 
 const Details = ({stateData}) => {
-  if (canEarlyVote(stateData) && hasInPersonEarlyVotingInfo(stateData)) {
-    return (
-      <FormattedBlock text={stateData.earlyVotingInPersonInfoCombined} />
-    )
-  }
-  return (null);
+  if (!canEarlyVote(stateData) && !hasInPersonEarlyVotingInfo(stateData)) { return (null); }
+
+  return (
+    <FormattedBlock text={stateData.earlyVotingInPersonInfoCombined} />
+  )
 }
 
 const EarlyInPerson = ({stateData}) => (
