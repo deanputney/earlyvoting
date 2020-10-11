@@ -66,30 +66,12 @@ const BallotTracking = ({stateData}) => {
   return (null);
 }
 
-const BallotCountLink = ({stateData}) => {
-  if (stateData.ballotCountingUrl) {
-    return (
-      <ul>
-        <li>
-          <Link to={stateData.ballotCountingUrl}>
-            ElectProject's count of current votes in {stateData.fullStateName}
-          </Link>
-        </li>
-      </ul>
-    )
-  }
-  return (<React.Fragment>{stateData.ballotCountingUrl}</React.Fragment>);
-}
-
 const NewsItems = ({stateData}) => {
-  if (stateData.newsItemsMd || stateData.ballotCountingUrl) {
+  if (stateData.newsItemsMd) {
     return (
       <React.Fragment>
-        <h3 class="title is-size-3-desktop is-size-4-mobile">Voting News</h3>
+        <h3 class="title is-size-3-desktop is-size-4-mobile">Voting News and Resources</h3>
 
-        <p>Hello: {stateData.ballotCountingUrl}</p>
-
-        <BallotCountLink stateData={stateData} />
         <FormattedBlock text={stateData.newsItemsMd} />
       </React.Fragment>
     )
@@ -207,7 +189,6 @@ export const query = graphql`
       sosElectionWebsite
       ballotTrackingUrl
       pollingPlaceLookupUrl
-      ballotCountingUrl
       newsItemsMd
     }
   }
