@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import './style.scss';
-import { statePageUri } from '../lib/common';
-import { dateDiffInDays, parseDate } from '../lib/dates';
+import '../style.scss';
+import { statePageUri } from '../../lib/common';
+import { dateDiffInDays, parseDate } from '../../lib/dates';
 import moment from 'moment';
 
 
@@ -28,9 +28,7 @@ const messageForCountdown = (fullStateName, numDaysToStart, startDateString) => 
 }
 
 
-const StateEarlyVotingCountdown = (data) => {
-  data = data.data
-
+const StateEarlyVotingCountdown = ({data}) => {
   var endDateString = data.year2020EarlyVotingEndsCombined;
   var startDateString = data.year2020EarlyVotingStartsCombined;
   var startDate = dateFromString(startDateString);

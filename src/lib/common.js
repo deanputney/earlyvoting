@@ -15,8 +15,21 @@ const shortStateName = (fullStateName) => {
   }
 }
 
+const canEarlyVote = (stateData) => {
+  if (stateData.year2020EarlyVotingStartsCombined != 'N/A') {
+    return true;
+  }
+  return false;
+}
+
+const hasInPersonEarlyVotingInfo = (stateData) => {
+  return (stateData.earlyVotingInPersonInfoCombined !== null)
+}
+
 module.exports = {
     slugifyState: slugifyState,
     statePageUri: statePageUri,
     shortStateName: shortStateName,
+    canEarlyVote: canEarlyVote,
+    hasInPersonEarlyVotingInfo: hasInPersonEarlyVotingInfo,
 }
