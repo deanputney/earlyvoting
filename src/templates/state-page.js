@@ -15,7 +15,7 @@ import Footer from '../components/footer';
 
 
 const PollingPlaceLookup = ({stateData}) => {
-  if (stateData.pollingPlaceLookupUrl) { return (null); }
+  if (!stateData.pollingPlaceLookupUrl) { return (null); }
 
   return (
     <React.Fragment>
@@ -41,12 +41,10 @@ const OnlineRegistration = ({stateData}) => {
       </React.Fragment>
     )
   }
-  else {
-    return (
-      <p>Unfortunately online registration is not possible in {stateData.fullStateName}.</p>
-    )
-  }
-  return (null);
+
+  return (
+    <p>Unfortunately online registration is not possible in {stateData.fullStateName}.</p>
+  )
 }
 
 const BallotTracking = ({stateData}) => {
