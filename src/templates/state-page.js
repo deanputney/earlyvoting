@@ -1,22 +1,79 @@
 import React from "react"
 import '../components/style.scss';
 import { graphql, Link } from 'gatsby';
-import { shortStateName } from '../lib/common';
+
+import { shortStateName, canEarlyVote, hasInPersonEarlyVotingInfo } from '../lib/common';
+
+import FormattedBlock from '../components/formatters/formatted-block';
 
 import Helmet from '../components/helmet';
 import SiteDescription from '../components/site-description';
 import StateHeader from '../components/state/header';
-import FormattedBlock from '../components/formatters/formatted-block';
-import StateEarlyVotingCountdown from '../components/state-early-voting-countdown';
-import canEarlyVote from '../hooks/state-data';
+import StateInfoCallout from '../components/state/info-callout';
+import EarlyInPerson from '../components/state/early-in-person';
 import Footer from '../components/footer';
 
-const hasInPersonEarlyVotingInfo = (stateData) => {
-  return (stateData.earlyVotingInPersonInfoCombined !== null)
+
+const PollingPlaceLookup = ({stateData}) => {
+  if (!stateData.pollingPlaceLookupUrl) { return (null); }
+
+  return (
+    <React.Fragment>
+      <h5>Polling place lookup</h5>
+      <p><Link to={stateData.pollingPlaceLookupUrl} target="_blank">
+          Find your polling place on this website.
+        </Link>
+      </p>
+    </React.Fragment>
+  )
 }
 
 const canRegisterOnline = (stateData) => {
   return (stateData.idRequirementsOvr !== "N/A")
+}
+
+const OnlineRegistration = ({stateData}) => {
+  if (canRegisterOnline(stateData)) {
+    return (
+      <React.Fragment>
+        <FormattedBlock text={stateData.idRequirementsOvr}/>
+        <Link to={stateData.externalToolOvr} class="button" target="_blank">
+          Register to vote online here
+        </Link>
+      </React.Fragment>
+    )
+  }
+
+  return (
+    <p>Unfortunately online registration is not possible in {stateData.fullStateName}.</p>
+  )
+}
+
+const BallotTracking = ({stateData}) => {
+  if (!stateData.ballotTrackingUrl) { return (null); }
+
+  return (
+    <React.Fragment>
+      <h3 class="title is-size-3-desktop is-size-4-mobile">Can I track my ballot?</h3>
+      <div class="subtitle is-5"><Link to={stateData.ballotTrackingUrl} target="_blank">
+          Track your ballot online.
+        </Link>
+      </div>
+      <p/>
+    </React.Fragment>
+  )
+}
+
+const NewsItems = ({stateData}) => {
+  if (!stateData.newsItemsMd) { return (null); }
+
+  return (
+    <React.Fragment>
+      <h3 class="title is-size-3-desktop is-size-4-mobile">Voting News and Resources</h3>
+
+      <FormattedBlock text={stateData.newsItemsMd} />
+    </React.Fragment>
+  )
 }
 
 export default function StatePage({ data }) {
@@ -48,89 +105,13 @@ export default function StatePage({ data }) {
             </div>
           </section>
 
-          <section className="section">
-            <div className="container">
-              <div className="columns">
-                <div class="message is-primary column content is-8-desktop is-offset-2-desktop is-fullwidth-mobile">
-                  {( (stateData) => {
-                    if (canEarlyVote(stateData)) {
-                      return (
-                        <StateEarlyVotingCountdown data={stateData}/>
-                      );
-                    }
-                  })(stateData)}
-
-                  <div className="columns is-centered">
-                    <div className="column is-narrow">
-                      {(
-                        (stateData) => {
-                          if (canEarlyVote(stateData)) {
-                            return (
-                              <React.Fragment>
-                                <Link to={stateData.officialInfoEarlyVotingCombined} target="_blank"
-                                  class="button is-link">
-                                  {shortStateName(stateData.fullStateName)} Early Voting Info
-                                </Link>
-                              </React.Fragment>
-                            );
-                          }
-                        }
-                      )(stateData)}
-                    </div>
-                    <div className="column is-narrow">
-                      <Link to={stateData.sosElectionWebsite} target="_blank"
-                        class="button">
-                        {shortStateName(stateData.fullStateName)} Election Website
-                      </Link>
-                    </div>
-                    <div className="column is-narrow">
-                      <Link to={stateData.year2020OfficialElectionCalendar} target="_blank"
-                        class="button">
-                        {shortStateName(stateData.fullStateName)} Election Calendar
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
+          <StateInfoCallout stateData={stateData}/>
 
           <section className="section">
             <div className="container">
               <div className="columns">
                 <div class="column content is-8-desktop is-offset-2-desktop is-fullwidth-mobile">
-                  <h3 class="title is-size-3-desktop is-size-4-mobile">Can you early vote in person?</h3>
-                  {(
-                    (stateData) => {
-                      if (canEarlyVote(stateData)) {
-                        return (
-                          <div class="subtitle is-5">
-                            Here's the <Link to={stateData.officialInfoEarlyVotingCombined} target="_blank">
-                              official early voting info for {stateData.fullStateName}.
-                                           </Link>
-                          </div>
-                        );
-                      }
-                      return (
-                        <div class="subtitle is-5">
-                          No. {stateData.fullStateName} does not have early in-person voting.
-                        </div>
-                      );
-                    }
-                  )(stateData)}
-
-                  {(
-                    (stateData) => {
-                      if (canEarlyVote(stateData) && hasInPersonEarlyVotingInfo(stateData)) {
-                        return (
-                          <FormattedBlock text={stateData.earlyVotingInPersonInfoCombined} />
-                        )
-                      }
-                      return;
-                    }
-                  )(stateData)}
-                  <p></p>
+                  <EarlyInPerson stateData={stateData} />
 
                   <h3 class="title is-size-3-desktop is-size-4-mobile">Can you early vote by mail?</h3>
                   <div class="subtitle is-5">Here's the&nbsp;
@@ -143,6 +124,8 @@ export default function StatePage({ data }) {
 
 
                   <h3 class="title is-size-3-desktop is-size-4-mobile">What about on election day?</h3>
+
+                  <PollingPlaceLookup stateData={stateData} />
 
                   <h5>ID requirements</h5>
 
@@ -160,24 +143,11 @@ export default function StatePage({ data }) {
                   <br/>
 
                   <h4 class="subtitle is-4">Can I register online?</h4>
-                  {(
-                    (stateData) => {
-                      if (canRegisterOnline(stateData)) {
-                        return (
-                          <React.Fragment>
-                            <FormattedBlock text={stateData.idRequirementsOvr}/>
-                            <Link to={stateData.externalToolOvr} class="button">Register to vote online here</Link>
-                          </React.Fragment>
-                        )
-                      }
-                      else {
-                        return (
-                          <p>Unfortunately online registration is not possible in {stateData.fullStateName}.</p>
-                        )
-                      }
-                      return;
-                    }
-                  )(stateData)}
+                  <OnlineRegistration stateData={stateData} />
+
+                  <BallotTracking stateData={stateData} />
+
+                  <NewsItems stateData={stateData} />
                 </div>
               </div>
             </div>
@@ -214,6 +184,9 @@ export const query = graphql`
       earlyVotingInPersonInfoCombined
       earlyVotingByMailInfoCombined
       sosElectionWebsite
+      ballotTrackingUrl
+      pollingPlaceLookupUrl
+      newsItemsMd
     }
   }
 `

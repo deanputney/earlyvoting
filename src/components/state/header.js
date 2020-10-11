@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 
 import '../style.scss';
 
-import canEarlyVote from '../../hooks/state-data';
+import { canEarlyVote } from '../../lib/common';
 
 const StateHeader = ({ stateData }) => (
   <section className="hero gradientBg is-halfheight">
