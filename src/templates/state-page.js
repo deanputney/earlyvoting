@@ -37,7 +37,9 @@ const OnlineRegistration = ({stateData}) => {
     return (
       <React.Fragment>
         <FormattedBlock text={stateData.idRequirementsOvr}/>
-        <Link to={stateData.externalToolOvr} class="button">Register to vote online here</Link>
+        <Link to={stateData.externalToolOvr} class="button" target="_blank">
+          Register to vote online here
+        </Link>
       </React.Fragment>
     )
   }
@@ -53,7 +55,7 @@ const BallotTracking = ({stateData}) => {
   return (
     <React.Fragment>
       <h3 class="title is-size-3-desktop is-size-4-mobile">Can I track my ballot?</h3>
-      <div class="subtitle is-5"><Link to={stateData.ballotTrackingUrl}>
+      <div class="subtitle is-5"><Link to={stateData.ballotTrackingUrl} target="_blank">
           Track your ballot online.
         </Link>
       </div>
